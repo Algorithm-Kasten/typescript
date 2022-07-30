@@ -1,13 +1,13 @@
 require "./main.rb"
 
-RSpec.describe SinglyLinkedList do
+RSpec.describe DoublyLinkedList do
     it 'initialize' do 
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         expect(list.size).to eq 0
     end 
 
     it 'push_front' do 
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         list.push_front(1)
         expect(list.printall).to eq "1"
         expect(list.size).to eq 1
@@ -30,7 +30,7 @@ RSpec.describe SinglyLinkedList do
     end 
 
     it 'push_back' do 
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         list.push_back(1)
         expect(list.printall).to eq "1"
         expect(list.size).to eq 1
@@ -53,7 +53,7 @@ RSpec.describe SinglyLinkedList do
     end 
 
     it 'push_front and push_back' do 
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         list.push_back(1)
         expect(list.printall).to eq "1"
         list.push_front(2)
@@ -69,7 +69,7 @@ RSpec.describe SinglyLinkedList do
     end 
 
     it 'insert in between nodes' do
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         list.push_back(1)
         list.push_back(2)
         list.push_back(3)
@@ -89,8 +89,37 @@ RSpec.describe SinglyLinkedList do
         expect(list.size).to eq 9
     end
 
-    it 'delete front and back' do
-        list = SinglyLinkedList.new 
+    it 'delete front' do 
+        list = DoublyLinkedList.new 
+        list.push_back(1)
+        list.push_front(2)
+        list.push_back(3)
+        list.push_front(4)
+        list.push_back(5)
+        list.push_front(6)
+        expect(list.printall).to eq "6 4 2 1 3 5"
+        
+        expect(list.pop_front).to eq 6
+        expect(list.printall).to eq "4 2 1 3 5"
+
+        expect(list.pop_front).to eq 4
+        expect(list.printall).to eq "2 1 3 5"
+
+        expect(list.pop_front).to eq 2
+        expect(list.printall).to eq "1 3 5"
+
+        expect(list.pop_front).to eq 1
+        expect(list.printall).to eq "3 5"
+
+        expect(list.pop_front).to eq 3
+        expect(list.printall).to eq "5"
+
+        expect(list.pop_front).to eq 5
+        expect(list.printall).to eq ""
+    end 
+
+    it 'delete back' do 
+        list = DoublyLinkedList.new 
         list.push_back(1)
         list.push_front(2)
         list.push_back(3)
@@ -105,6 +134,35 @@ RSpec.describe SinglyLinkedList do
         expect(list.pop_back).to eq 3
         expect(list.printall).to eq "6 4 2 1"
 
+        expect(list.pop_back).to eq 1
+        expect(list.printall).to eq "6 4 2"
+
+        expect(list.pop_back).to eq 2
+        expect(list.printall).to eq "6 4"
+
+        expect(list.pop_back).to eq 4
+        expect(list.printall).to eq "6"
+
+        expect(list.pop_back).to eq 6
+        expect(list.printall).to eq ""
+    end 
+
+    it 'delete front and back' do
+        list = DoublyLinkedList.new 
+        list.push_back(1)
+        list.push_front(2)
+        list.push_back(3)
+        list.push_front(4)
+        list.push_back(5)
+        list.push_front(6)
+        expect(list.printall).to eq "6 4 2 1 3 5"
+
+        expect(list.pop_back).to eq 5
+        expect(list.printall).to eq "6 4 2 1 3"
+
+        expect(list.pop_back).to eq 3
+        expect(list.printall).to eq "6 4 2 1"
+
         expect(list.pop_front).to eq 6
         expect(list.printall).to eq "4 2 1"
 
@@ -112,14 +170,16 @@ RSpec.describe SinglyLinkedList do
         expect(list.printall).to eq "2 1"
 
         expect(list.pop_back).to eq 1
+        expect(list.size).to eq 1
         expect(list.printall).to eq "2"
-
+        
         expect(list.pop_back).to eq 2
+        expect(list.size).to eq 0
         expect(list.printall).to eq ""
     end
 
     it 'delete in between nodes' do 
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         list.push_back(1)
         list.push_front(2)
         list.push_back(3)
@@ -156,7 +216,7 @@ RSpec.describe SinglyLinkedList do
     end 
 
     it 'empty check' do 
-        list = SinglyLinkedList.new 
+        list = DoublyLinkedList.new 
         expect(list.empty?).to eq true
 
         list.push_front(5);

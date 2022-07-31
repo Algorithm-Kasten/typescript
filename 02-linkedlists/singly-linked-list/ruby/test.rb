@@ -83,9 +83,9 @@ RSpec.describe SinglyLinkedList do
         list.insertAt(3, 71)
         expect(list.printall).to eq "17 1 71 2 3 4 5"
         list.insertAt(7, 10)
-        expect(list.printall).to eq "17 1 71 2 3 4 5 10"
+        expect(list.printall).to eq "17 1 71 2 3 4 10 5"
         list.insertAt(1, 0)
-        expect(list.printall).to eq "0 17 1 71 2 3 4 5 10"
+        expect(list.printall).to eq "0 17 1 71 2 3 4 10 5"
         expect(list.size).to eq 9
     end
 

@@ -10,83 +10,60 @@ end
 
 class DoublyLinkedList
     def initialize 
-        @head = Node.new(0)
-        @tail = Node.new(0)
-        @head.next = @tail 
-        @tail.prev = @head
+        @dummy_head = Node.new(0)
+        @dummy_tail = Node.new(0)
+        @dummy_head.next = @dummy_tail 
+        @dummy_tail.prev = @dummy_head
         @size = 0
     end 
 
     def push_front(value)
         new_node = Node.new(value)
-        if self.empty? 
-            new_node.prev = @head 
-            new_node.next = @tail
-            @head.next = new_node
-            @tail.prev = new_node
-            @size = 1
-            return
-        end 
 
-        new_node.prev = @head
-        new_node.next = @head.next
-        @head.next.prev = new_node
-        @head.next = new_node
+        new_node.prev = @dummy_head
+        new_node.next = @dummy_head.next
+        @dummy_head.next.prev = new_node
+        @dummy_head.next = new_node
+
         @size += 1
     end 
 
     def push_back(value)
-        if self.empty?
-            return push_front(value)
-        end 
-
         new_node = Node.new(value)
-        new_node.next = @tail 
-        new_node.prev = @tail.prev
-        @tail.prev.next = new_node
-        @tail.prev = new_node
+
+        new_node.next = @dummy_tail 
+        new_node.prev = @dummy_tail.prev
+        @dummy_tail.prev.next = new_node
+        @dummy_tail.prev = new_node
 
         @size += 1
     end 
 
-    
     def pop_front
-        if self.empty?
-            puts "... the list is empty"
-            return
-        end 
+        return if self.empty?
 
-        data = @head.next.data 
-        @head.next = @head.next.next
+        data = @dummy_head.next.data 
+        @dummy_head.next = @dummy_head.next.next
         @size -= 1
         data
     end
     
     def pop_back
-        if self.empty?
-            puts "... the list is empty"
-            return
-        end 
+        return if self.empty?
 
-        data = @tail.prev.data
-        @tail.prev.prev.next = @tail
-        @tail.prev = @tail.prev.prev
+        data = @dummy_tail.prev.data
+        @dummy_tail.prev.prev.next = @dummy_tail
+        @dummy_tail.prev = @dummy_tail.prev.prev
         @size -= 1
         data
     end
     
     # 1-based index
     def insertAt(position, value)
-        if position == 1
-            return push_front(value)
-        elsif position == @size 
-            return push_back(value)
-        end 
-
         new_node = Node.new(value)
-        curr = @head.next 
+        curr = @dummy_head
 
-        (position-2).times do 
+        (position-1).times do 
             curr = curr.next
         end 
 
@@ -97,14 +74,8 @@ class DoublyLinkedList
     
     # 1-based index
     def deleteAt(position)
-        if position == 1
-            return pop_front
-        elsif position == @size 
-            return pop_back
-        end 
-
-        curr = @head.next
-        (position-2).times do
+        curr = @dummy_head
+        (position-1).times do
             curr = curr.next 
         end 
 
@@ -125,8 +96,8 @@ class DoublyLinkedList
     def printall
         return "" if self.empty?
         nodes = []
-        curr = @head.next 
-        while curr != @tail
+        curr = @dummy_head.next 
+        while curr != @dummy_tail
             nodes.push curr.data
             curr = curr.next
         end 

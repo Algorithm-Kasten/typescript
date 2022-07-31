@@ -192,17 +192,17 @@ The original credit goes to the [coding-interview-university](https://github.com
   <li>[ ] Circular-Linked List (singly linked list)
     <ul>
       <li>[x] <a href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">Circular Linked List | Set 1 (Introduction and Applications</a></li>
-      <li>[ ] (<b>Optional</b>) Implement a circular-linked list:
+      <li>[x] (<b>Optional</b>) Implement a circular-linked list:
         <ul>
-          <li>[ ] front() - get value of front item</li>
-          <li>[ ] back() - get value of end item</li>
-          <li>[ ] value_n_from_end(n) - returns the value of the node at nth position from the end of the list</li>
-          <li>[ ] insert(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
-          <li>[ ] push_front(data) - adds an item to the front of the list</li>
-          <li>[ ] pop_front() - remove front item and return its data</li>
-          <li>[ ] push_back(data) - adds an item at the end</li>
-          <li>[ ] pop_back() - removes end item and returns its data</li>
-          <li>[ ] reverse() - reverses the list</li>
+          <li>[x] push_front(data) - adds an item to the front of the list</li>
+          <li>[x] push_back(data) - adds an item at the end</li>
+          <li>[x] insert_at(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
+          <li>[x] pop_front() - remove front item and return its data</li>
+          <li>[x] pop_back() - removes end item and returns its data</li>
+          <li>[x] delete_at(index) - delete value at index </li>
+          <li>[x] front() - get value of front item</li>
+          <li>[x] back() - get value of end item</li>
+          <li>[x] reverse() - reverses the list</li>
         </ul>
       </li>
     </ul>

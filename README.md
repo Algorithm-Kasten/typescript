@@ -327,18 +327,18 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Hash Table</summary>
 <ul>
-  <li>[ ] <a href="https://www.educative.io/edpresso/what-is-hashing">What is hashing?</a></li>
+  <li>[x] <a href="https://www.educative.io/edpresso/what-is-hashing">What is hashing?</a></li>
   <ul>
     <li>what is hashing? collision? where is it used?</li>
     <li><a href="https://computersciencewiki.org/index.php/Hashing">Hashing</a></li>
   </ul>
 </ul>
 <ul>
-  <li>[ ] <a href="https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_data_structures/Hash_tables_and_hashing">Fundamentals of data structures: Hashing</a></li>
+  <li>[x] <a href="https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_data_structures/Hash_tables_and_hashing">Fundamentals of data structures: Hashing</a></li>
     <ul>
-      <li>[ ] Hashing tables</li>
-      <li>[ ] Hashing Algorithms</li>
-      <li>[ ] Collisions (open and closed addressing)</li>
+      <li>[x] Hashing tables</li>
+      <li>[x] Hashing Algorithms</li>
+      <li>[x] Collisions (open and closed addressing)</li>
     </ul>
 </ul>
 <ul>
@@ -367,11 +367,9 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Implement with array using linear probing</li>
   <ul>
-    <li>[ ] hash(k, m) - m is size of hash table</li>
-    <li>[ ] add(key, value) - if key already exists, update value</li>
-    <li>[ ] exists(key)</li>
-    <li>[ ] get(key)</li>
-    <li>[ ] remove(key)</li>
+    <li>[x] hash(k, v) </li>
+    <li>[x] add(key, value) - if key already exists, update value</li>
+    <li>[x] remove(key)</li>
     <li>extra resources: </li>
     <ul>
       <li><a href="https://www.sanfoundry.com/c-program-implement-hash-tables-linear-probing/">C Program to Implement Hash Tables with Linear Probing</a></li>
@@ -390,15 +388,16 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Tree - Fundamentals</summary>
 <ul>
-  <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/trees-95qda">Series: Trees(video)</a></li>
+  <li>[x] <a href="https://www.coursera.org/lecture/data-structures/trees-95qda">Series: Trees(video)</a></li>
+  <li>[x] <a href="https://www.programiz.com/dsa/trees">Tree Data Structure</a></li>
   <ul>
-    <li>basic tree construction</li>
-    <li>traversals (Inorder, Preorder, Postorder))</li>
+    <li>[x] Basic Tree Terminologies</li>
+    <li>[x] Traversals (Inorder, Preorder, Postorder))</li>
+    <li>[x] Properties of Binary Tree</li>
+    <li>[x] Types of Binary Tree</li>
   </ul>
-  <li>[ ] <a href="https://www.geeksforgeeks.org/binary-tree-set-2-properties/">Properties of binary tree</a></li>
-  <li>[ ] <a href="https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/">Types of Binary Tree</a></li>
-  <li>[ ] <a href="https://www.youtube.com/watch?v=uWL6FJhq5fM">BFS and DFS (video)</a></li>
-  <li>[ ] <a href="https://www.geeksforgeeks.org/bfs-vs-dfs-binary-tree/">BFS vs DFS for Binary Tree</a></li>
+  <li>[x] <a href="https://www.youtube.com/watch?v=uWL6FJhq5fM">BFS and DFS (video)</a></li>
+  <li>[x] <a href="https://www.geeksforgeeks.org/bfs-vs-dfs-binary-tree/">BFS vs DFS for Binary Tree</a></li>
 </ul>
 <ul>
   <li>BFS notes:</li>
@@ -428,12 +427,15 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Binary Search Tree (BST)</summary>
 <ul>
-  <li>[ ] <a href="https://www.youtube.com/watch?v=x6At0nzX92o&index=1&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">BST Review (video)</a></li>
-  <li>[ ] <a href="https://www.coursera.org/learn/data-structures/lecture/E7cXP/introduction">BST Introduction (video)</a></li>
+  <li>[x] <a href="https://www.youtube.com/watch?v=x6At0nzX92o&index=1&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">BST Review (video)</a></li>
+  <ul>
+    <li>If you're going to allow duplicate valuse, it's better to insert in on the right subtree. This will give you a stable order when doing inorder traversal.</li>
+  </ul>
+  <li>[x] <a href="https://www.coursera.org/learn/data-structures/lecture/E7cXP/introduction">BST Introduction (video)</a></li>
   <li>C/C++: </li>
     <ul>
-      <li>[ ] <a href="https://www.youtube.com/watch?v=COZK7NATh4k&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=28">Binary search tree - Implementation in C/C++ (video)</a></li>
-      <li>[ ] <a href="https://www.youtube.com/watch?v=hWokyBoo0aI&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=29">BST implementation - memory allocation in stack and heap (video)</a></li>
+      <li>[x] <a href="https://www.youtube.com/watch?v=COZK7NATh4k&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=28">Binary search tree - Implementation in C/C++ (video)</a></li>
+      <li>[x] <a href="https://www.youtube.com/watch?v=hWokyBoo0aI&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=29">BST implementation - memory allocation in stack and heap (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=Ut90klNN264&index=30&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P">Find min and max element in a binary search tree (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=_pnqMz5nrRs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=31">Find height of a binary tree (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=9RHO6jU--GU&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=32">Binary tree traversal - breadth-first and depth-first strategies (video)</a></li>
@@ -458,14 +460,14 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Implement BST:</li>
   <ul>
-    <li>[ ] insert(data) - insert data into tree</li>
-    <li>[ ] get_node_count() - get count of values stored</li>
-    <li>[ ] print_values() - prints the values in the tree, from min to max</li>
+    <li>[x] insert(data) - insert data into tree</li>
+    <li>[x] get_node_count() - get count of values stored</li>
+    <li>[x] print_values() - prints the values in the tree, from min to max</li>
     <li>[ ] delete_tree()</li>
-    <li>[ ] is_in_tree() - returns true if given value exists in the tree</li>
+    <li>[x] is_in_tree() - returns true if given value exists in the tree</li>
     <li>[ ] get_height() - returns the height in nodes (single node's height is 1)</li>
-    <li>[ ] get_min() - returns the minimum value stored in the tree</li>
-    <li>[ ] get_max() - returns the maximum value stored in the tree</li>
+    <li>[x] get_min() - returns the minimum value stored in the tree</li>
+    <li>[x] get_max() - returns the maximum value stored in the tree</li>
     <li>[ ] is_binary_search_tree()</li>
     <li>[ ] delete_value()</li>
     <li>[ ] get_successor - returns next-highest value in tree after given value, -1 if none</li>

@@ -10,7 +10,7 @@ int main() {
 
     Stack<int> stack;
     cout << "Push" << endl;
-    for(int i=0; i<10; ++i) {
+    for(int i=0; i<33; ++i) {
         stack.push(rand()%32);
         stack.print();
     }
@@ -24,6 +24,6 @@ int main() {
     cout << "Is stack empty? " << stack.isEmpty() << endl;
     cout << "Is stack full? " << stack.isFull() << endl;
     cout << "size: " << stack.size() << endl;
-    
+
     return 0;
 }

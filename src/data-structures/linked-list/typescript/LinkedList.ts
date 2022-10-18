@@ -4,107 +4,146 @@ class LinkedListNode {
   readonly value: number;
   next: ListNode;
 
-  constructor(value: number, next = null) {
+  constructor(value: number, next: ListNode = null) {
     this.value = value;
     this.next = next;
   }
 }
 
 class LinkedList {
+  private count: number;
   head: ListNode;
   tail: ListNode;
-  count: number;
 
   constructor() {
+    this.count = 0;
     this.head = null;
     this.tail = null;
-    this.count = 0;
   }
 
   prepend(value: number): void {
-    this.count += 1;
-    let newNode = new LinkedListNode(value);
+    let newNode = new LinkedListNode(value, this.head);
+    this.head = newNode;
 
-    if (this.head === null) {
-      this.head = newNode;
-      this.tail = this.head;
-      this.head.next = this.tail;
-      return;
+    if (null === this.tail) {
+      this.tail = newNode;
     }
 
-    newNode.next = this.head;
-    this.head = newNode;
+    this.count += 1;
   }
 
   append(value: number): void {
-    this.count += 1;
     let newNode = new LinkedListNode(value);
 
-    if (this.head === null) {
+    if (null === this.head) {
       this.head = newNode;
       this.tail = this.head;
-      this.head.next = this.tail;
-      return;
+    } else {
+      this.tail!.next = newNode;
+      this.tail = newNode;
     }
 
-    if (this.tail) this.tail.next = newNode;
-    this.tail = newNode;
+    this.count += 1;
   }
 
   // pos: position -> 1-based index
   insert(value: number, pos: number): void {
-    if (this.head === null || pos <= 1) {
+    const index = pos < 0 ? 0 : pos > this.count ? this.count : pos;
+
+    if (index === 0) {
       this.prepend(value);
-      return;
-    }
-
-    if (pos === this.count) {
+    } else if (index === this.count) {
       this.append(value);
-      return;
-    }
+    } else {
+      let cnt = 1;
+      let curr = this.head;
+      const newNode = new LinkedListNode(value);
 
-    this.count += 1;
+      while (curr) {
+        if (cnt === index) break;
+        curr = curr.next;
+        cnt += 1;
+      }
 
-    let curr: LinkedListNode = this.head;
-    for (let i = 1; i < pos - 1; ++i) {
-      if (curr?.next) curr = curr.next;
-    }
-
-    let newNode: LinkedListNode = new LinkedListNode(value);
-    if (curr) {
-      newNode.next = curr.next;
-      curr.next = newNode;
+      newNode.next = curr!.next;
+      curr!.next = newNode;
+      this.count += 1;
     }
   }
 
-  remove(value: number): void {
+  delete(value: number): ListNode {
+    if (null === this.head) return null;
+
+    let deletedNode: ListNode = null;
+
+    if (this.head.value === value) {
+      deletedNode = this.head;
+      this.head = this.head.next;
+    } else {
+      let curr = this.head;
+
+      while (curr.next) {
+        if (curr.next.value === value) {
+          deletedNode = curr.next;
+          curr.next = curr.next.next;
+        } else {
+          curr = curr.next;
+        }
+      }
+
+      if (this.tail?.value === value) {
+        this.tail = curr;
+      }
+    }
+
+    list.count -= 1;
+
+    return deletedNode;
+  }
+
+  deleteHead(): ListNode {
     if (this.head === null) {
-      console.error('list is empty');
-      return;
+      return null;
+    }
+
+    let deletedNode = this.head;
+
+    if (this.count === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+    }
+
+    list.count -= 1;
+    return deletedNode;
+  }
+
+  deleteTail(): ListNode {
+    if (this.head === null) {
+      return null;
+    }
+
+    let deletedNode = this.head;
+
+    if (this.count === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      let curr = this.head;
+      while (curr.next) {
+        if (null === curr.next.next) {
+          deletedNode = curr.next;
+          curr.next = null;
+        } else {
+          curr = curr.next;
+        }
+      }
+      this.tail = curr;
     }
 
     this.count -= 1;
-
-    if (this.head.value === value) {
-      this.head = this.head.next;
-      if (this.count === 0) {
-        this.head = this.tail = null;
-      }
-      return;
-    }
-
-    let curr: ListNode = this.head;
-    while (curr?.next) {
-      if (curr.next.value === value) {
-        curr.next = curr.next.next;
-        if (curr.next === null) {
-          this.tail = curr;
-        }
-        break;
-      }
-
-      curr = curr.next;
-    }
+    return deletedNode;
   }
 
   search(value: number): boolean {
@@ -120,12 +159,12 @@ class LinkedList {
     return false;
   }
 
-  length(): number {
-    return this.count;
+  empty(): boolean {
+    return this.head === null;
   }
 
   print(): void {
-    if (this.count === 0) {
+    if (this.empty()) {
       console.error('list is empty');
       return;
     }
@@ -143,48 +182,44 @@ class LinkedList {
 }
 
 let list: LinkedList = new LinkedList();
-list.append(3);
-list.print();
-list.append(4);
-list.print();
-list.append(5);
-list.print();
-list.prepend(1);
-list.print();
-list.prepend(2);
-list.print();
-list.prepend(3);
+
+[1, 2, 3].forEach((x) => list.append(x));
 list.print();
 
-list.insert(17, 1);
+[4, 5, 6].forEach((x) => list.prepend(x));
 list.print();
 
-list.insert(17, list.length());
+list.insert(17, 0);
 list.print();
 
-list.insert(77, 3);
+list.insert(17, 10);
 list.print();
 
-list.remove(77);
+list.insert(123, 3);
 list.print();
 
-list.remove(1);
-list.print();
-list.remove(1);
-list.print();
-list.remove(3);
-list.remove(3);
+while (false === list.empty()) {
+  list.delete(list.head!.value);
+  list.print();
+}
+
 list.print();
 
-list.remove(17);
-list.print();
-list.remove(17);
-list.print();
-
-list.remove(2);
+list.append(1);
+list.append(2);
+list.prepend(-1);
+list.prepend(-2);
 list.print();
 
-list.remove(4);
+console.log(list.deleteHead()?.value);
+console.log(list.deleteTail()?.value);
 list.print();
-list.remove(5);
+console.log(list.deleteHead()?.value);
+console.log(list.deleteTail()?.value);
+list.print();
+list.print();
+
+list.append(1);
+list.print();
+list.append(100);
 list.print();

@@ -57,3 +57,6 @@ main
 *.DS_store
 
 node_modules/
+
+# compile javascript code
+*.js

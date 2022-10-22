@@ -1,20 +1,23 @@
-type ListNode = LinkedListNode | null;
+type ListNode = DoublyLinkedListNode | null;
 
-class LinkedListNode {
+class DoublyLinkedListNode {
   readonly value: number;
+  prev: ListNode;
   next: ListNode;
 
   /**
    * @param value - readonly number
-   * @param next - LinkedListNode | null
+   * @param prev - DoublyLinkedListNode | null
+   * @param next - DoublyLinkedListNode | null
    */
-  constructor(value: number, next: ListNode = null) {
+  constructor(value: number, prev: ListNode = null, next: ListNode = null) {
     this.value = value;
+    this.prev = prev;
     this.next = next;
   }
 }
 
-class LinkedList {
+class DoublyLinkedList {
   private count: number;
   head: ListNode;
   tail: ListNode;
@@ -30,7 +33,10 @@ class LinkedList {
    * @return void
    */
   prepend(value: number): void {
-    let newNode = new LinkedListNode(value, this.head);
+    let newNode = new DoublyLinkedListNode(value, null, this.head);
+    if (this.head) {
+      this.head.prev = newNode;
+    }
     this.head = newNode;
 
     if (null === this.tail) {
@@ -45,14 +51,15 @@ class LinkedList {
    * @return void
    */
   append(value: number): void {
-    let newNode = new LinkedListNode(value);
+    let newNode = new DoublyLinkedListNode(value, this.tail);
+
+    if (this.tail) {
+      this.tail.next = newNode;
+    }
+    this.tail = newNode;
 
     if (null === this.head) {
       this.head = newNode;
-      this.tail = this.head;
-    } else {
-      this.tail!.next = newNode;
-      this.tail = newNode;
     }
 
     this.count += 1;
@@ -60,26 +67,30 @@ class LinkedList {
 
   /**
    * @param value - number
-   * @param pos - number (0-based index)
+   * @param pos - number (1-based index)
    * @return void
    */
   insert(value: number, pos: number): void {
-    const index = pos < 0 ? 0 : pos > this.count ? this.count : pos;
-
-    if (index === 0) {
+    if (this.head === null) {
       this.prepend(value);
-    } else if (index === this.count) {
+      return;
+    }
+
+    pos = pos < 1 ? 1 : pos > this.count ? this.count + 1 : pos;
+
+    if (pos === 1) {
+      this.prepend(value);
+    } else if (pos === this.count + 1) {
       this.append(value);
     } else {
       let curr: ListNode = this.head;
-      const newNode = new LinkedListNode(value);
-
-      while (curr && pos > 1) {
+      while (curr && pos > 2) {
         curr = curr.next;
         --pos;
       }
 
-      newNode.next = curr!.next;
+      let newNode = new DoublyLinkedListNode(value, curr, curr?.next);
+      curr!.next!.prev = newNode;
       curr!.next = newNode;
       this.count += 1;
     }
@@ -87,84 +98,74 @@ class LinkedList {
 
   /**
    * @param value - number
-   * @return ListNode - LinkedListNode | null
+   * @return ListNode - DoublyLinkedListNode | null
    */
   delete(value: number): ListNode {
-    if (null === this.head) return null;
+    let deletedNode: ListNode = this.find(value);
 
-    let deletedNode: ListNode = null;
-
-    if (this.head.value === value) {
-      deletedNode = this.head;
-      this.head = this.head.next;
-    } else {
-      let curr = this.head;
-
-      while (curr.next) {
-        if (curr.next.value === value) {
-          deletedNode = curr.next;
-          curr.next = curr.next.next;
-        } else {
-          curr = curr.next;
-        }
-      }
-
-      if (this.tail?.value === value) {
-        this.tail = curr;
+    if (deletedNode) {
+      if (deletedNode.prev && deletedNode.next) {
+        deletedNode.prev.next = deletedNode.next;
+        deletedNode.next.prev = deletedNode.prev;
+        this.count -= 1;
+        return deletedNode;
+      } else if (deletedNode === this.head) {
+        return this.deleteHead();
+      } else if (deletedNode === this.tail) {
+        return this.deleteTail();
       }
     }
-
-    this.count -= 1;
 
     return deletedNode;
   }
 
   /**
-   * @return ListNode - LinkedListNode | null
+   * @return ListNode - DoublyLinkedListNode | null
    */
   deleteHead(): ListNode {
     if (this.head === null) {
       return null;
     }
 
-    let deletedNode = this.head;
+    let deletedNode: ListNode = null;
 
-    if (this.count === 1) {
+    if (this.head === this.tail) {
+      deletedNode = this.head;
       this.head = null;
       this.tail = null;
-    } else {
-      this.head = this.head.next;
+
+      return deletedNode;
     }
+
+    deletedNode = this.head;
+    this.head = this.head.next;
+    if (this.head) this.head.prev = null;
 
     this.count -= 1;
     return deletedNode;
   }
 
   /**
-   * @return ListNode - LinkedListNode | null
+   * @return ListNode - DoublyLinkedListNode | null
    */
   deleteTail(): ListNode {
-    if (this.head === null) {
+    if (this.tail === null) {
       return null;
     }
 
-    let deletedNode = this.head;
+    let deletedNode: ListNode = null;
 
-    if (this.count === 1) {
+    if (this.head === this.tail) {
+      deletedNode = this.tail;
       this.head = null;
       this.tail = null;
-    } else {
-      let curr = this.head;
-      while (curr.next) {
-        if (null === curr.next.next) {
-          deletedNode = curr.next;
-          curr.next = null;
-        } else {
-          curr = curr.next;
-        }
-      }
-      this.tail = curr;
+
+      return deletedNode;
     }
+
+    deletedNode = this.tail;
+    this.tail = this.tail.prev;
+    if (this.tail) this.tail.next = null;
 
     this.count -= 1;
     return deletedNode;
@@ -172,7 +173,7 @@ class LinkedList {
 
   /**
    * @param value - number
-   * @return ListNode - LinkedListNode | null
+   * @return ListNode - DoublyLinkedListNode | null
    */
   find(value: number): ListNode {
     let curr: ListNode = this.head;

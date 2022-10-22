@@ -1,9 +1,13 @@
 type ListNode = LinkedListNode | null;
 
-class LinkedListNode {
+export default class LinkedListNode {
   readonly value: number;
   next: ListNode;
 
+  /**
+   * @param value - readonly number
+   * @param next - LinkedListNode | null
+   */
   constructor(value: number, next: ListNode = null) {
     this.value = value;
     this.next = next;
@@ -21,6 +25,10 @@ class LinkedList {
     this.tail = null;
   }
 
+  /**
+   * @param value - number
+   * @return void
+   */
   prepend(value: number): void {
     let newNode = new LinkedListNode(value, this.head);
     this.head = newNode;
@@ -32,6 +40,10 @@ class LinkedList {
     this.count += 1;
   }
 
+  /**
+   * @param value - number
+   * @return void
+   */
   append(value: number): void {
     let newNode = new LinkedListNode(value);
 
@@ -46,7 +58,11 @@ class LinkedList {
     this.count += 1;
   }
 
-  // pos: position -> 1-based index
+  /**
+   * @param value - number
+   * @param pos - number (0-based index)
+   * @return void
+   */
   insert(value: number, pos: number): void {
     const index = pos < 0 ? 0 : pos > this.count ? this.count : pos;
 
@@ -55,14 +71,12 @@ class LinkedList {
     } else if (index === this.count) {
       this.append(value);
     } else {
-      let cnt = 1;
-      let curr = this.head;
+      let curr: ListNode = this.head;
       const newNode = new LinkedListNode(value);
 
-      while (curr) {
-        if (cnt === index) break;
+      while (curr && pos > 1) {
         curr = curr.next;
-        cnt += 1;
+        --pos;
       }
 
       newNode.next = curr!.next;
@@ -71,6 +85,10 @@ class LinkedList {
     }
   }
 
+  /**
+   * @param value - number
+   * @return ListNode - LinkedListNode | null
+   */
   delete(value: number): ListNode {
     if (null === this.head) return null;
 
@@ -96,11 +114,14 @@ class LinkedList {
       }
     }
 
-    list.count -= 1;
+    this.count -= 1;
 
     return deletedNode;
   }
 
+  /**
+   * @return ListNode - LinkedListNode | null
+   */
   deleteHead(): ListNode {
     if (this.head === null) {
       return null;
@@ -115,10 +136,13 @@ class LinkedList {
       this.head = this.head.next;
     }
 
-    list.count -= 1;
+    this.count -= 1;
     return deletedNode;
   }
 
+  /**
+   * @return ListNode - LinkedListNode | null
+   */
   deleteTail(): ListNode {
     if (this.head === null) {
       return null;
@@ -146,23 +170,33 @@ class LinkedList {
     return deletedNode;
   }
 
-  search(value: number): boolean {
+  /**
+   * @param value - number
+   * @return ListNode - LinkedListNode | null
+   */
+  find(value: number): ListNode {
     let curr: ListNode = this.head;
 
     while (curr) {
       if (curr.value === value) {
-        return true;
+        return curr;
       }
 
       curr = curr.next;
     }
-    return false;
+    return null;
   }
 
+  /**
+   * @return boolean
+   */
   empty(): boolean {
     return this.head === null;
   }
 
+  /**
+   * @return void
+   */
   print(): void {
     if (this.empty()) {
       console.error('list is empty');
@@ -171,55 +205,11 @@ class LinkedList {
     let curr: ListNode = this.head;
     let str: string = '';
 
-    while (curr && curr !== this.tail) {
+    while (curr) {
       str += `${curr.value} `;
-      curr = curr?.next;
+      curr = curr.next;
     }
 
-    str += `${curr?.value} `;
     console.log(str);
   }
 }
-
-let list: LinkedList = new LinkedList();
-
-[1, 2, 3].forEach((x) => list.append(x));
-list.print();
-
-[4, 5, 6].forEach((x) => list.prepend(x));
-list.print();
-
-list.insert(17, 0);
-list.print();
-
-list.insert(17, 10);
-list.print();
-
-list.insert(123, 3);
-list.print();
-
-while (false === list.empty()) {
-  list.delete(list.head!.value);
-  list.print();
-}
-
-list.print();
-
-list.append(1);
-list.append(2);
-list.prepend(-1);
-list.prepend(-2);
-list.print();
-
-console.log(list.deleteHead()?.value);
-console.log(list.deleteTail()?.value);
-list.print();
-console.log(list.deleteHead()?.value);
-console.log(list.deleteTail()?.value);
-list.print();
-list.print();
-
-list.append(1);
-list.print();
-list.append(100);
-list.print();

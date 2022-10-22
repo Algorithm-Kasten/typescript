@@ -26,6 +26,22 @@ class LinkedList {
   }
 
   /**
+   * @param pos - number (1-based index)
+   * @return ListNode - LinkedListNode | null
+   */
+  getNode(pos: number): ListNode {
+    let curr: ListNode = this.head;
+
+    let i = 1;
+    while (curr && i < pos) {
+      curr = curr.next;
+      --pos;
+    }
+
+    return curr;
+  }
+
+  /**
    * @param value - number
    * @return void
    */
@@ -90,32 +106,30 @@ class LinkedList {
    * @return ListNode - LinkedListNode | null
    */
   delete(value: number): ListNode {
-    if (null === this.head) return null;
-
     let deletedNode: ListNode = null;
 
-    if (this.head.value === value) {
+    if (null === this.head) {
+      return null;
+    } else if (value === this.head.value) {
       deletedNode = this.head;
       this.head = this.head.next;
     } else {
-      let curr = this.head;
+      let curr: ListNode = this.head;
 
-      while (curr.next) {
+      while (curr?.next) {
         if (curr.next.value === value) {
           deletedNode = curr.next;
           curr.next = curr.next.next;
-        } else {
-          curr = curr.next;
+          if (curr.next === this.tail) {
+            this.tail = curr;
+          }
         }
-      }
 
-      if (this.tail?.value === value) {
-        this.tail = curr;
+        curr = curr.next;
       }
     }
 
     this.count -= 1;
-
     return deletedNode;
   }
 

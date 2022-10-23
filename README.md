@@ -64,7 +64,7 @@ The original credit goes to the [coding-interview-university](https://github.com
   <li>[ ] <a href="https://www.eskimo.com/~scs/cclass/int/sx8.html">Pointers to Pointers</a> - for passing a pointer to a function that may change the address where that pointer points</li>
 </ul>
 <ul>
-  <li>[x] Implement Singly-Linked List (with and without tail pointer)
+  <li>[x] Implement Singly-Linked List (with or without tail pointer)
     <ul>
       <li>[x] size() - returns number of data elements in list</li>
       <li>[x] empty() - bool returns true if empty</li>

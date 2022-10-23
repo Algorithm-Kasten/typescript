@@ -232,6 +232,8 @@ class LinkedList {
 
   /**
    * Reverse the list
+   * @params node - ListNode
+   * @returns ListNode
    */
   reverseRecur(node: ListNode = this.head): ListNode {
     if (null === node) {
@@ -297,9 +299,6 @@ class LinkedList {
     return null;
   }
 
-  /**
-   * @returns void
-   */
   print(): void {
     if (this.empty()) {
       console.error('list is empty');
@@ -316,23 +315,3 @@ class LinkedList {
     console.log(str);
   }
 }
-
-let list = new LinkedList();
-list.append(1);
-list.append(2);
-list.print();
-
-list.reverseRecur();
-list.print();
-
-list.reverseIter();
-list.print();
-
-list.append(3);
-list.append(4);
-list.print();
-
-list.reverseIter();
-list.print();
-list.reverseRecur();
-list.print();

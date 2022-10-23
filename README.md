@@ -31,7 +31,6 @@ The original credit goes to the [coding-interview-university](https://github.com
   - Quick Sort
   - Heap Sort
   - Counting Sort
-- [Practice Problems](#practice-problems)
 
 ---
 
@@ -42,26 +41,26 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Linked Lists</summary>
 <ul>
-  <li>[x] About Linked Lists:
+  <li>[ ] About Linked Lists:
     <ul>
-      <li>[x] <a href="https://www.youtube.com/watch?v=HB7TcYklBHY">Singly Linked Lists Tutorial - What is a Linked List?</a></li>
-      <li>[x] <a href="https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK">Singly Linked Lists (video)</a></li>
-      <li>[x] <a href="https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0">CS 61B - Linked Lists 1 (video)</a></li>
-      <li>[x] <a href="https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w">CS 61B - Linked Lists 2 (video)</a></li>
-      <li>[x] <a href="https://www.youtube.com/watch?v=QN6FPiD0Gzo">C code (video)</a> - just portions about Node struct and *memory allocation*.</li>
+      <li>[ ] <a href="https://www.youtube.com/watch?v=HB7TcYklBHY">Singly Linked Lists Tutorial - What is a Linked List?</a></li>
+      <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK">Singly Linked Lists (video)</a></li>
+      <li>[ ] <a href="https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0">CS 61B - Linked Lists 1 (video)</a></li>
+      <li>[ ] <a href="https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w">CS 61B - Linked Lists 2 (video)</a></li>
+      <li>[ ] <a href="https://www.youtube.com/watch?v=QN6FPiD0Gzo">C code (video)</a> - just portions about Node struct and *memory allocation*.</li>
     </ul>
   </li>
 </ul>
 <ul>
-  <li>[x] <a href="https://www.geeksforgeeks.org/linked-list-vs-array/?ref=lbp">Linked List vs Arrays</a>
+  <li>[ ] <a href="https://www.geeksforgeeks.org/linked-list-vs-array/?ref=lbp">Linked List vs Arrays</a>
     <ul>
-      <li>[x] <a href="https://www.coursera.org/lecture/data-structures-optimizing-performance/core-linked-lists-vs-arrays-rjBs9">Core Linked Lists Vs Arrays (video)</a></li>
-      <li>[x] <a href="https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd">In The Real World Linked Lists Vs Arrays (video)</a></li>
+      <li>[ ] <a href="https://www.coursera.org/lecture/data-structures-optimizing-performance/core-linked-lists-vs-arrays-rjBs9">Core Linked Lists Vs Arrays (video)</a></li>
+      <li>[ ] <a href="https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd">In The Real World Linked Lists Vs Arrays (video)</a></li>
     </ul>
   </li>
 </ul>
 <ul>
-  <li>[x] Vector vs. List - <a href="https://www.youtube.com/watch?v=YQs6IC-vgmo)">why you should avoid linked lists (video)</a> -  (this is from <a href="https://youtu.be/m0H5bUPfwn8?t=2690">GoingNative 2012 - Day 1 - C++11 style</a>)</li>
+  <li>[ ] Vector vs. List - <a href="https://www.youtube.com/watch?v=YQs6IC-vgmo)">why you should avoid linked lists (video)</a> -  (this is from <a href="https://youtu.be/m0H5bUPfwn8?t=2690">GoingNative 2012 - Day 1 - C++11 style</a>)</li>
   <li>[ ] <a href="https://www.eskimo.com/~scs/cclass/int/sx8.html">Pointers to Pointers</a> - for passing a pointer to a function that may change the address where that pointer points</li>
 </ul>
 <ul>
@@ -69,43 +68,43 @@ The original credit goes to the [coding-interview-university](https://github.com
     <ul>
       <li>[x] size() - returns number of data elements in list</li>
       <li>[x] empty() - bool returns true if empty</li>
-      <li>[x] value_at(index) - returns the value of the nth item (starting at 0 for first)</li>
-      <li>[x] push_front(value) - adds an item to the front of the list</li>
-      <li>[x] pop_front() - remove front item and return its value</li>
-      <li>[x] push_back(value) - adds an item at the end</li>
-      <li>[x] pop_back() - removes end item and returns its value</li>
+      <li>[x] getNode(index) - returns the value of the nth item (starting at 0 for first)</li>
+      <li>[x] prepend(value) - adds an item to the front of the list</li>
+      <li>[x] deleteHead() - remove front item and return its value</li>
+      <li>[x] append(value) - adds an item at the end</li>
+      <li>[x] deleteTail() - removes end item and returns its value</li>
       <li>[x] front() - get value of front item</li>
       <li>[x] back() - get value of end item</li>
       <li>[x] insert(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
       <li>[x] erase(index) - removes node at given index</li>
-      <li>[x] value_n_from_end(n) - returns the value of the node at nth position from the end of the list</li>
       <li>[x] reverse() - reverses the list
         <ul>
-          <li>implemented iteratively</li>
-          <li>try doing it recursively</li>
+          <li>[x] implemented iteratively</li>
+          <li>[x] implemented recursively</li>
         </ul>
       </li>
-      <li>[x] remove_value(value) - removes the first item in the list with this value</li>
+      <li>[x] removeValue(value) - removes the first item in the list with this value</li>
+      <li>[x] find(value) - returns the 1st node with a value if exists; othewise returns null</li>
     </ul>
   </li>
     </ul>
   </li>
 </ul>
 <ul>
-  <li>[x] Doubly-linked List:
+  <li>[ ] Doubly-linked List:
   <ul>
-    <li>[x] <a href="https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD">Doubly Linked List (video)</a></li>
-    <li>[x] (<b>Optional</b>) Implement Doubly-Linked List</li>
+    <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD">Doubly Linked List (video)</a></li>
+    <li>[ ] (<b>Optional</b>) Implement Doubly-Linked List</li>
       <ul>
-        <li>[x] push_front(value) - adds an item to the front of the list</li>
-        <li>[x] pop_front() - remove front item and return its value</li>
-        <li>[x] push_back(value) - adds an item at the end</li>
-        <li>[x] pop_back() - removes end item and returns its value</li>
-        <li>[x] insert(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
-        <li>[x] erase(index) - removes node at given index</li>
-        <li>[x] value_n_from_end(n) - returns the value of the node at nth position from the end of the list</li>
-        <li>[x] reverse() - reverses the list</li>
-        <li>[x] remove_value(value) - removes the first item in the list with this value</li>
+        <li>[ ] push_front(value) - adds an item to the front of the list</li>
+        <li>[ ] pop_front() - remove front item and return its value</li>
+        <li>[ ] push_back(value) - adds an item at the end</li>
+        <li>[ ] pop_back() - removes end item and returns its value</li>
+        <li>[ ] insert(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
+        <li>[ ] erase(index) - removes node at given index</li>
+        <li>[ ] value_n_from_end(n) - returns the value of the node at nth position from the end of the list</li>
+        <li>[ ] reverse() - reverses the list</li>
+        <li>[ ] remove_value(value) - removes the first item in the list with this value</li>
       </ul>
     </li>
   </ul>
@@ -113,7 +112,7 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] XOR Linked List
     <ul>
-      <li>[x] <a href="https://iq.opengenus.org/xor-linked-list/">XOR Linked List</a></li>
+      <li>[ ] <a href="https://iq.opengenus.org/xor-linked-list/">XOR Linked List</a></li>
       <li> (<b>Optional</b>) Implement:
         <ul>
           <li>[ ] traverse - print all values in the list in forward direction</li>
@@ -132,18 +131,18 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Circular-Linked List (singly linked list)
     <ul>
-      <li>[x] <a href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">Circular Linked List | Set 1 (Introduction and Applications</a></li>
-      <li>[x] (<b>Optional</b>) Implement a circular-linked list:
+      <li>[ ] <a href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">Circular Linked List | Set 1 (Introduction and Applications</a></li>
+      <li>[ ] (<b>Optional</b>) Implement a circular-linked list:
         <ul>
-          <li>[x] push_front(data) - adds an item to the front of the list</li>
-          <li>[x] push_back(data) - adds an item at the end</li>
-          <li>[x] insert_at(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
-          <li>[x] pop_front() - remove front item and return its data</li>
-          <li>[x] pop_back() - removes end item and returns its data</li>
-          <li>[x] delete_at(index) - delete value at index </li>
-          <li>[x] front() - get value of front item</li>
-          <li>[x] back() - get value of end item</li>
-          <li>[x] reverse() - reverses the list</li>
+          <li>[ ] push_front(data) - adds an item to the front of the list</li>
+          <li>[ ] push_back(data) - adds an item at the end</li>
+          <li>[ ] insert_at(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
+          <li>[ ] pop_front() - remove front item and return its data</li>
+          <li>[ ] pop_back() - removes end item and returns its data</li>
+          <li>[ ] delete_at(index) - delete value at index </li>
+          <li>[ ] front() - get value of front item</li>
+          <li>[ ] back() - get value of end item</li>
+          <li>[ ] reverse() - reverses the list</li>
         </ul>
       </li>
     </ul>
@@ -156,30 +155,30 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Stack</summary>
 <ul>
-  <li>[x] <a href="https://www.geeksforgeeks.org/stack-data-structure-introduction-program/">Stack Data Structure (Introduction and Program)</a></li>
-  <li>[x] <a href="https://www.coursera.org/lecture/data-structures/stacks-UdKzQ">Stack (video)</a></li>
+  <li>[ ] <a href="https://www.geeksforgeeks.org/stack-data-structure-introduction-program/">Stack Data Structure (Introduction and Program)</a></li>
+  <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/stacks-UdKzQ">Stack (video)</a></li>
 </ul>
 <ul>
-  <li>[x] Implement using a linked list:</li>
+  <li>[ ] Implement using a linked list:</li>
   <ul>
-    <li>[x] push(data) - adds data at position top</li>
-    <li>[x] pop() - returns data and removes recently added element (top)</li>
-    <li>[x] peek() - returns data at top of the stack</li>
-    <li>[x] empty()</li>
+    <li>[ ] push(data) - adds data at position top</li>
+    <li>[ ] pop() - returns data and removes recently added element (top)</li>
+    <li>[ ] peek() - returns data at top of the stack</li>
+    <li>[ ] empty()</li>
   </ul>
 </ul>
 <ul>
-  <li>[x] (<b>Optional</b>) Implement using a fixed-sized array - optional because it's trivial:</li>
+  <li>[ ] (<b>Optional</b>) Implement using a fixed-sized array - optional because it's trivial:</li>
   <ul>
-    <li>[x] push(data) - adds data at position top</li>
-    <li>[x] pop() - returns data and removes recently added element (top)</li>
-    <li>[x] peek() - returns data at top of the stack</li>
-    <li>[x] empty()</li>
-    <li>[x] full()</li>
+    <li>[ ] push(data) - adds data at position top</li>
+    <li>[ ] pop() - returns data and removes recently added element (top)</li>
+    <li>[ ] peek() - returns data at top of the stack</li>
+    <li>[ ] empty()</li>
+    <li>[ ] full()</li>
   </ul>
 </ul>
 <ul>
-  <li>[x] Cost:</li>
+  <li>[ ] Cost:</li>
   <ul>
      <li>push: O(1) (amortized, linked list and array)</li>
      <li>pop: O(1) (linked list and array)</li>
@@ -194,41 +193,41 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Queue</summary>
 <ul>
-  <li>[x] <a href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/">Queue | Set 1 (Introduction and Array Implementation)</a></li>
-  <li>[x] <a href="https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/">Circular Queue (Ring Buffer)</a></li>
-  <li>[x] <a href="https://en.wikipedia.org/wiki/Circular_buffer">Circular buffer/FIFO</a></li>
+  <li>[ ] <a href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/">Queue | Set 1 (Introduction and Array Implementation)</a></li>
+  <li>[ ] <a href="https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/">Circular Queue (Ring Buffer)</a></li>
+  <li>[ ] <a href="https://en.wikipedia.org/wiki/Circular_buffer">Circular buffer/FIFO</a></li>
 </ul>
 <ul>
-  <li>[x] Implement a queue</li>
+  <li>[ ] Implement a queue</li>
     <ul>
-      <li>[x] using a linked-list (w/ tail pointer):</li>
+      <li>[ ] using a linked-list (w/ tail pointer):</li>
       <ul>
-        <li>[x] enqueue(data) - add data at the end of the queue </li>
-        <li>[x] dequeue() - remove and return the first element in the queue </li>
-        <li>[x] empty() - check if queue is empty </li>
+        <li>[ ] enqueue(data) - add data at the end of the queue </li>
+        <li>[ ] dequeue() - remove and return the first element in the queue </li>
+        <li>[ ] empty() - check if queue is empty </li>
       </ul>
-      <li>[x] using a fixed-sized array:</li>
+      <li>[ ] using a fixed-sized array:</li>
       <ul>
-        <li>[x] enqueue(data) - adds a data at the end of the list iff space is available</li>
-        <li>[x] dequeue() - remove and return the first element in the queue</li>
-        <li>[x] empty() - check if queue is empty </li>
-        <li>[x] full() - check if queue is full </li>
+        <li>[ ] enqueue(data) - adds a data at the end of the list iff space is available</li>
+        <li>[ ] dequeue() - remove and return the first element in the queue</li>
+        <li>[ ] empty() - check if queue is empty </li>
+        <li>[ ] full() - check if queue is full </li>
       </ul>
     </ul>
 </ul>
 <ul>
-  <li>[x] Implement a Circular Queue - LinkedList
+  <li>[ ] Implement a Circular Queue - LinkedList
     <ul>
-      <li>[x] enqueue(data) - add data at the end of the queue </li>
-      <li>[x] dequeue() - remove and return the first element in the queue </li>
-      <li>[x] empty() - check if queue is empty</li>
-      <li>[x] front() - gets the first element</li>
-      <li>[x] rear() - gets the last element</li>
+      <li>[ ] enqueue(data) - add data at the end of the queue </li>
+      <li>[ ] dequeue() - remove and return the first element in the queue </li>
+      <li>[ ] empty() - check if queue is empty</li>
+      <li>[ ] front() - gets the first element</li>
+      <li>[ ] rear() - gets the last element</li>
     </ul>
   </li>
 </ul>
 <ul>
-  <li>[x] Cost:</li>
+  <li>[ ] Cost:</li>
     <ul>
       <li>enqueue: O(1) (amortized, linked list and array)</li>
       <li>dequeue: O(1) (linked list and array)</li>
@@ -236,20 +235,20 @@ The original credit goes to the [coding-interview-university](https://github.com
     </ul>
 </ul>
 <ul>
-  <li>[x] Implement a Double-Ended Queue - LinkedList
+  <li>[ ] Implement a Double-Ended Queue - LinkedList
     <ul>
     <li>
     resource: <a href="https://www.programiz.com/dsa/deque">https://www.programiz.com/dsa/deque</a>
     </li>
     </ul>
     <ul>
-      <li>[x] addFront(data) - add new data in front of the queue</li>
-      <li>[x] addRear(data) - add data at the end of the queue </li>
-      <li>[x] removeFront(data) - remove and return the first element in the queue </li>
-      <li>[x] removeRear(data) - remove and return the last element in the queue </li>
-      <li>[x] empty() - check if queue is empty </li>
-      <li>[x] front() - gets the first element</li>
-      <li>[x] rear() - gets the last element</li>
+      <li>[ ] addFront(data) - add new data in front of the queue</li>
+      <li>[ ] addRear(data) - add data at the end of the queue </li>
+      <li>[ ] removeFront(data) - remove and return the first element in the queue </li>
+      <li>[ ] removeRear(data) - remove and return the last element in the queue </li>
+      <li>[ ] empty() - check if queue is empty </li>
+      <li>[ ] front() - gets the first element</li>
+      <li>[ ] rear() - gets the last element</li>
     </ul>
   </li>
   <li>
@@ -268,18 +267,18 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Hash Table</summary>
 <ul>
-  <li>[x] <a href="https://www.educative.io/edpresso/what-is-hashing">What is hashing?</a></li>
+  <li>[ ] <a href="https://www.educative.io/edpresso/what-is-hashing">What is hashing?</a></li>
   <ul>
     <li>what is hashing? collision? where is it used?</li>
     <li><a href="https://computersciencewiki.org/index.php/Hashing">Hashing</a></li>
   </ul>
 </ul>
 <ul>
-  <li>[x] <a href="https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_data_structures/Hash_tables_and_hashing">Fundamentals of data structures: Hashing</a></li>
+  <li>[ ] <a href="https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_data_structures/Hash_tables_and_hashing">Fundamentals of data structures: Hashing</a></li>
     <ul>
-      <li>[x] Hashing tables</li>
-      <li>[x] Hashing Algorithms</li>
-      <li>[x] Collisions (open and closed addressing)</li>
+      <li>[ ] Hashing tables</li>
+      <li>[ ] Hashing Algorithms</li>
+      <li>[ ] Collisions (open and closed addressing)</li>
     </ul>
 </ul>
 <ul>
@@ -308,9 +307,9 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Implement with array using linear probing</li>
   <ul>
-    <li>[x] hash(k, v) </li>
-    <li>[x] add(key, value) - if key already exists, update value</li>
-    <li>[x] remove(key)</li>
+    <li>[ ] hash(k, v) </li>
+    <li>[ ] add(key, value) - if key already exists, update value</li>
+    <li>[ ] remove(key)</li>
     <li>extra resources: </li>
     <ul>
       <li><a href="https://www.sanfoundry.com/c-program-implement-hash-tables-linear-probing/">C Program to Implement Hash Tables with Linear Probing</a></li>
@@ -329,16 +328,16 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Tree - Fundamentals</summary>
 <ul>
-  <li>[x] <a href="https://www.coursera.org/lecture/data-structures/trees-95qda">Series: Trees(video)</a></li>
-  <li>[x] <a href="https://www.programiz.com/dsa/trees">Tree Data Structure</a></li>
+  <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/trees-95qda">Series: Trees(video)</a></li>
+  <li>[ ] <a href="https://www.programiz.com/dsa/trees">Tree Data Structure</a></li>
   <ul>
-    <li>[x] Basic Tree Terminologies</li>
-    <li>[x] Traversals (Inorder, Preorder, Postorder))</li>
-    <li>[x] Properties of Binary Tree</li>
-    <li>[x] Types of Binary Tree</li>
+    <li>[ ] Basic Tree Terminologies</li>
+    <li>[ ] Traversals (Inorder, Preorder, Postorder))</li>
+    <li>[ ] Properties of Binary Tree</li>
+    <li>[ ] Types of Binary Tree</li>
   </ul>
-  <li>[x] <a href="https://www.youtube.com/watch?v=uWL6FJhq5fM">BFS and DFS (video)</a></li>
-  <li>[x] <a href="https://www.geeksforgeeks.org/bfs-vs-dfs-binary-tree/">BFS vs DFS for Binary Tree</a></li>
+  <li>[ ] <a href="https://www.youtube.com/watch?v=uWL6FJhq5fM">BFS and DFS (video)</a></li>
+  <li>[ ] <a href="https://www.geeksforgeeks.org/bfs-vs-dfs-binary-tree/">BFS vs DFS for Binary Tree</a></li>
 </ul>
 <ul>
   <li>BFS notes:</li>
@@ -368,15 +367,15 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Binary Search Tree (BST)</summary>
 <ul>
-  <li>[x] <a href="https://www.youtube.com/watch?v=x6At0nzX92o&index=1&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">BST Review (video)</a></li>
+  <li>[ ] <a href="https://www.youtube.com/watch?v=x6At0nzX92o&index=1&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">BST Review (video)</a></li>
   <ul>
     <li>If you're going to allow duplicate valuse, it's better to insert in on the right subtree. This will give you a stable order when doing inorder traversal.</li>
   </ul>
-  <li>[x] <a href="https://www.coursera.org/learn/data-structures/lecture/E7cXP/introduction">BST Introduction (video)</a></li>
+  <li>[ ] <a href="https://www.coursera.org/learn/data-structures/lecture/E7cXP/introduction">BST Introduction (video)</a></li>
   <li>C/C++: </li>
     <ul>
-      <li>[x] <a href="https://www.youtube.com/watch?v=COZK7NATh4k&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=28">Binary search tree - Implementation in C/C++ (video)</a></li>
-      <li>[x] <a href="https://www.youtube.com/watch?v=hWokyBoo0aI&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=29">BST implementation - memory allocation in stack and heap (video)</a></li>
+      <li>[ ] <a href="https://www.youtube.com/watch?v=COZK7NATh4k&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=28">Binary search tree - Implementation in C/C++ (video)</a></li>
+      <li>[ ] <a href="https://www.youtube.com/watch?v=hWokyBoo0aI&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=29">BST implementation - memory allocation in stack and heap (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=Ut90klNN264&index=30&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P">Find min and max element in a binary search tree (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=_pnqMz5nrRs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=31">Find height of a binary tree (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=9RHO6jU--GU&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=32">Binary tree traversal - breadth-first and depth-first strategies (video)</a></li>
@@ -401,14 +400,14 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Implement BST:</li>
   <ul>
-    <li>[x] insert(data) - insert data into tree</li>
-    <li>[x] get_node_count() - get count of values stored</li>
-    <li>[x] print_values() - prints the values in the tree, from min to max</li>
+    <li>[ ] insert(data) - insert data into tree</li>
+    <li>[ ] get_node_count() - get count of values stored</li>
+    <li>[ ] print_values() - prints the values in the tree, from min to max</li>
     <li>[ ] delete_tree()</li>
-    <li>[x] is_in_tree() - returns true if given value exists in the tree</li>
+    <li>[ ] is_in_tree() - returns true if given value exists in the tree</li>
     <li>[ ] get_height() - returns the height in nodes (single node's height is 1)</li>
-    <li>[x] get_min() - returns the minimum value stored in the tree</li>
-    <li>[x] get_max() - returns the maximum value stored in the tree</li>
+    <li>[ ] get_min() - returns the minimum value stored in the tree</li>
+    <li>[ ] get_max() - returns the maximum value stored in the tree</li>
     <li>[ ] is_binary_search_tree()</li>
     <li>[ ] delete_value()</li>
     <li>[ ] get_successor - returns next-highest value in tree after given value, -1 if none</li>
@@ -732,8 +731,8 @@ The original credit goes to the [coding-interview-university](https://github.com
 - [ ] Link Cut Tree, LCT
 
 ## ETC
-- [x] GCD: Euclidean Algorithm (유클리드 호제법) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/euclidean/)
-- [x] Morris Traversal (threaded binary tree) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/morris-traversal/)
-- [x] Primality Test (소수 판별하기) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/prime/)
-- [x] Prime Factorization (소인수분해) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/prime-factorization/)
-- [x] Sieve of Eratosthenes (에라토스테네스의 체) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/eratosthenes) -->
+- [ ] GCD: Euclidean Algorithm (유클리드 호제법) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/euclidean/)
+- [ ] Morris Traversal (threaded binary tree) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/morris-traversal/)
+- [ ] Primality Test (소수 판별하기) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/prime/)
+- [ ] Prime Factorization (소인수분해) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/prime-factorization/)
+- [ ] Sieve of Eratosthenes (에라토스테네스의 체) [🔗](https://github.com/yuueu/ds-algo/tree/main/archive/etc/eratosthenes) -->

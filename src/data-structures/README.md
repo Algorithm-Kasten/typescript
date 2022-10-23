@@ -1,4 +1,4 @@
 # Data Structures
 
 - [Singly Linked List](./linked-list/)
-- [Doubly Linked List](./doubly-linked-list/DoublyLinkedList.ts)
+- [Doubly Linked List](./doubly-linked-list/)

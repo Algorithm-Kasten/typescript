@@ -1,7 +1,7 @@
 type ListNode = DoublyLinkedListNode | null;
 
 class DoublyLinkedListNode {
-  readonly value: number;
+  value: number;
   prev: ListNode;
   next: ListNode;
 
@@ -34,13 +34,13 @@ class DoublyLinkedList {
    */
   prepend(value: number): void {
     let newNode = new DoublyLinkedListNode(value, null, this.head);
-    if (this.head) {
-      this.head.prev = newNode;
-    }
+    this.head && (this.head.prev = newNode);
     this.head = newNode;
 
     if (null === this.tail) {
       this.tail = newNode;
+      this.tail.prev = this.head;
+      this.head.next = this.tail;
     }
 
     this.count += 1;
@@ -52,14 +52,13 @@ class DoublyLinkedList {
    */
   append(value: number): void {
     let newNode = new DoublyLinkedListNode(value, this.tail);
-
-    if (this.tail) {
-      this.tail.next = newNode;
-    }
+    this.tail && (this.tail.next = newNode);
     this.tail = newNode;
 
     if (null === this.head) {
       this.head = newNode;
+      this.head.next = this.tail;
+      this.tail.prev = this.head;
     }
 
     this.count += 1;
@@ -67,31 +66,33 @@ class DoublyLinkedList {
 
   /**
    * @param value - number
-   * @param pos - number (1-based index)
+   * @param index - number (1-based index)
    * @return void
    */
-  insert(value: number, pos: number): void {
+  insert(value: number, index: number): void {
     if (this.head === null) {
       this.prepend(value);
       return;
     }
 
-    pos = pos < 1 ? 1 : pos > this.count ? this.count + 1 : pos;
+    index = index < 0 ? 0 : index > this.count ? this.count : index;
 
-    if (pos === 1) {
+    if (index === 0) {
       this.prepend(value);
-    } else if (pos === this.count + 1) {
+    } else if (index === this.count) {
       this.append(value);
     } else {
       let curr: ListNode = this.head;
-      while (curr && pos > 2) {
+      while (curr && index > 1) {
         curr = curr.next;
-        --pos;
+        --index;
       }
 
       let newNode = new DoublyLinkedListNode(value, curr, curr?.next);
-      curr!.next!.prev = newNode;
-      curr!.next = newNode;
+      if (curr && curr.next) {
+        curr.next.prev = newNode;
+        curr.next = newNode;
+      }
       this.count += 1;
     }
   }
@@ -100,7 +101,7 @@ class DoublyLinkedList {
    * @param value - number
    * @return ListNode - DoublyLinkedListNode | null
    */
-  delete(value: number): ListNode {
+  removeValue(value: number): ListNode {
     let deletedNode: ListNode = this.find(value);
 
     if (deletedNode) {
@@ -113,10 +114,10 @@ class DoublyLinkedList {
         this.tail = null;
       } else if (deletedNode === this.head) {
         this.head = this.head.next;
-        if (this.head) this.head.prev = null;
+        this.head && (this.head.prev = null);
       } else if (deletedNode === this.tail) {
         this.tail = this.tail.prev;
-        if (this.tail) this.tail.next = null;
+        this.tail && (this.tail.next = null);
       }
     }
 
@@ -140,7 +141,7 @@ class DoublyLinkedList {
     }
 
     this.head = this.head.next;
-    if (this.head) this.head.prev = null;
+    this.head && (this.head.prev = null);
 
     this.count -= 1;
     return deletedNode;
@@ -166,10 +167,56 @@ class DoublyLinkedList {
 
     deletedNode = this.tail;
     this.tail = this.tail.prev;
-    if (this.tail) this.tail.next = null;
+    this.tail && (this.tail.next = null);
 
     this.count -= 1;
     return deletedNode;
+  }
+
+  /**
+   * @param index - number (0-based)
+   * @returns ListNode
+   */
+  erase(index: number): ListNode {
+    let deletedNode = null;
+
+    if (0 === index) {
+      return this.deleteHead();
+    }
+    if (this.count - 1 === index) {
+      return this.deleteTail();
+    }
+
+    let curr: ListNode = this.head;
+    while (curr && index > 0) {
+      curr = curr.next;
+      --index;
+    }
+
+    deletedNode = curr;
+    if (curr && curr.prev && curr.next) {
+      curr.prev.next = curr.next;
+      curr.next.prev = curr.prev;
+    }
+
+    return deletedNode;
+  }
+
+  /**
+   * Reverses the list
+   */
+  reverse(): void {
+    let currHead = this.head;
+    let currTail = this.tail;
+
+    while (currHead !== currTail) {
+      if (currHead && currTail) {
+        [currHead.value, currTail.value] = [currTail.value, currHead.value];
+      }
+
+      currHead && (currHead = currHead.next);
+      currTail && (currTail = currTail.prev);
+    }
   }
 
   /**

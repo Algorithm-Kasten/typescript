@@ -1,5 +1,5 @@
 # Algorithms
 
 - Search
-  - [Linear Search](./linear-search/LinearSearch.ts)
-  - [Binary Search](./binary-search/BinarySearch.ts)
+  - [Linear Search](./linear-search/)
+  - [Binary Search](./binary-search/)

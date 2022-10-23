@@ -17,7 +17,7 @@ isSymmetric(root) → boolean
     L ← q.pop
     R ← q.pop
 
-    IF (L and R == ø) or (R and L == ø)
+    IF (L and R == Ø) or (R and L == Ø)
       RETURN false
     ELSIF L and R
       IF L.val != R.val

@@ -9,7 +9,7 @@ The simplest form of the element in a linked list called node, composes of data 
 ### Access
 
 ```text
-getNode(head, i) → Node | ø
+getNode(head, i) → Node | Ø
     Pre: head is the 1st node in the list
          i is a 1-based index of the node in the list we're trying to get
     Post: ith node is returned from the list
@@ -28,10 +28,10 @@ END getNode
 ### Search
 
 ```text
-def search(head, value) → Node | ø
+def search(head, value) → Node | Ø
     Pre: head is the 1st node in the list
          value is the value to search for
-    Post: returns a node with the value; othewrise return ø (null)
+    Post: returns a node with the value; othewrise return Ø (null)
 
     current ← head
 
@@ -43,7 +43,7 @@ def search(head, value) → Node | ø
         current ← current.next
     END WHILE
 
-    RETURN ø
+    RETURN Ø
 END search
 ```
 
@@ -57,7 +57,7 @@ prepend(head, value) → void
 
     n ← Node(value)
 
-    IF this.head == ø
+    IF this.head == Ø
         this.head ← n
     ELSE
         n.next ← head
@@ -76,7 +76,7 @@ append(head, value)
 
     n ← Node(value)
 
-    IF this.head == ø
+    IF this.head == Ø
         this.head ← n
     ELSE
         current ← this.head
@@ -92,13 +92,13 @@ END append
 ### delete
 
 ```text
-delete(head, value) → Node | ø
+delete(head, value) → Node | Ø
     Pre: head is the 1st node in the list
          value is the value we're going to remove from the list
-    Post: a node has been removed from the list and returned; otherwise, return ø (null)
+    Post: a node has been removed from the list and returned; otherwise, return Ø (null)
 
-    IF head == ø
-        RETURN ø
+    IF head == Ø
+        RETURN Ø
     ELSIF head == value
         deletedNode ← head
         head        ← head.next
@@ -114,7 +114,7 @@ delete(head, value) → Node | ø
         END
     END
 
-    return ø
+    return Ø
 END delete
 ```
 

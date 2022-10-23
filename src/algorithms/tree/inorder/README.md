@@ -7,7 +7,7 @@ inorder(node) → Node
     Pre: node is any arbitrary node in the list
     Post: we have traversed the list in inorder
 
-    IF node == ø
+    IF node == Ø
         RETURN
     END IF
 

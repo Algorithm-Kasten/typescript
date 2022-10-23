@@ -1,90 +1,56 @@
-# Singly Linked List
+# Doubly Linked List
 
-A **singly linked list** is a linear collection of data elements. The order of the element is not given by their physical location in memory. Instead, each element points to the next node using the address.
+A **doubly linked list** is a linear collection of data elements in which the order of the element is determined not by its physical address in the memory, but by references (or links) that each element points to.
 
-The simplest form of the element in a linked list called node, composes of data and a reference to the next link. This structure allows for efficient insertion and removal of elements from any position in the linked list. A drawback of linked lists is that access time is linear.
+The structure of the element or a node in a doubly linked list consists of a data and two references: _previous_ and _next_. Having two references for _previous_ and _next_ allows for simpler insertion and removal of elements in any position in the list. Also, we can easily traverse the list in reverse order using the `previous`.
 
-## Pseudocode for Basic Operations
+A drawback of doubly linked list is that it consumes more memory because of the extra information in the node.
 
-### Access
-
-```text
-getNode(head, i) → Node | ø
-    Pre: head is the 1st node in the list
-         i is a 1-based index of the node in the list we're trying to get
-    Post: ith node is returned from the list
-
-    curr ← head
-    i    ← 1
-
-    WHILE i < pos
-      curr ← curr.next
-    END WHILE
-
-    RETURN current
-END getNode
-```
-
-### Search
-
-```text
-def search(head, value) → Node | ø
-    Pre: head is the 1st node in the list
-         value is the value to search for
-    Post: returns a node with the value; othewrise return ø (null)
-
-    current ← head
-
-    WHILE current
-        IF current.value == value
-            RETURN current
-        END IF
-
-        current ← current.next
-    END WHILE
-
-    RETURN ø
-END search
-```
+## Pseudocode
 
 ### prepend
 
 ```text
-prepend(head, value) → void
+prepend(head, tail, value) → void
     Pre: head is the 1st node in the list
+         tail is the last node in the list
          value is the value we're going to insert
     Post: a new node has been inserted at the head of the list
 
-    n ← Node(value)
+    n      ← Node(value)
+    n.next ← head
 
-    IF this.head == ø
-        this.head ← n
-    ELSE
-        n.next ← head
-        head   ← n
+    IF head != ø
+        head.prev ← n
     END IF
-end prepend
+
+    IF tail == ø
+        tail ← n
+    END IF
+
+    head ← n
+END prepend
 ```
 
 ### append
 
 ```text
-append(head, value)
+append(head, tail, value) → void
     Pre: head is the 1st node in the list
+         tail is the last node in the list
          value is the value we're going to insert in the list
     Post: a new node has been inserted at the end of the list
 
-    n ← Node(value)
+    n      ← Node(value)
+    n.prev ← tail
 
-    IF this.head == ø
-        this.head ← n
-    ELSE
-        current ← this.head
-        WHILE current.next
-            current ← current.next
-        END
+    IF tail != ø
+        tail.next ← n
+    END IF
+    tail ← n
 
-        current.next ← n
+    IF head == ø
+        head ← n
     END IF
 END append
 ```
@@ -92,43 +58,50 @@ END append
 ### delete
 
 ```text
-delete(head, value) → Node | ø
+delete(head, tail, value) → Node | ø
     Pre: head is the 1st node in the list
+         tail is the last node in the list
          value is the value we're going to remove from the list
-    Post: a node has been removed from the list and returned; otherwise, return ø (null)
+    Post: a node is removed from the list and returned; otherwise, return ø
 
-    IF head == ø
-        RETURN ø
-    ELSIF head == value
-        deletedNode ← head
-        head        ← head.next
-        RETURN deletedNode
-    END
+    // FIND returns the node with a given value or ø
+    deletedNode ← call FIND(value)
 
-    current ← head
-    WHILE current.next
-        IF current.next.value == value
-            deletedNode  ← current.next
-            current.next ← current.next.next
-            return deletedNode
-        END
-    END
+    IF deletedNode
+        IF deletedNode.prev AND deletedNode.next
+            deletedNode.prev.next ← deletedNode.next;
+            deletedNode.next.prev ← deletedNode.prev;
+            RETURN deletedNode;
+        ELSIF deletedNode == head && deletedNode == tail
+            head ← ø
+            tail ← ø
+        ELSIF deletedNode == head
+            head       ← head.next
+            head?.prev ← ø
+        ELSIF deletedNode == tail
+            tail       ← tail.prev
+            tail?.next ← ø
+        END IF
+    END IF
 
-    return ø
+    RETURN deletedNode
 END delete
 ```
 
-## Complexities
+### Reverse Traversal
 
-### Time Complexity
+```text
+reverseTraversal(tail)
+    Pre: tail points to the last node in the list
+    Post: a list has been traversed in reverse order
 
-| Access | Search | Insertion | Deletion |
-| :----: | :----: | :-------: | :------: |
-|  O(n)  |  O(n)  |   O(1)    |   O(n)   |
-
-### Space Complexity
-
-O(n)
+    n ← tail
+    WHILE n != ø
+        print n.value
+        n ← n.prev
+    END WHILE
+END reverseTraversal
+```
 
 ## Problems
 

@@ -7,7 +7,6 @@ The original credit goes to the [coding-interview-university](https://github.com
 ## Table of Contents
 
 - [Data Structures](#data-structures)
-  - [Arrays](#arrays)
   - [Linked Lists](#linked-lists)
   - [Stack](#stack)
   - [Queue](#queue)
@@ -37,64 +36,6 @@ The original credit goes to the [coding-interview-university](https://github.com
 ---
 
 ## Data Structures
-
-<a id="arrays"></a>
-
-<details>
-<summary> Arrays </summary>
-<ul>
-		<li> 
-      About Arrays: 
-      <ul>
-        <li>[ ] <a href="https://www.geeksforgeeks.org/introduction-to-arrays/">Introduction to Arrays</a></li>
-        <li>[x] <a href="https://www.coursera.org/lecture/data-structures/arrays-OsBSF">Arrays (video)</a></li>
-        <li>[x] <a href="https://www.coursera.org/lecture/data-structures/dynamic-arrays-EwbnV">Dynamic Arrays (video)</a></li>
-        <li>[x] <a href="https://www.youtube.com/watch?v=1jtrQqYpt7g">Jagged Arrays</a></li>
-      </ul>
-    </li>
-</ul>
-<ul>
-  <li> 
-    [x] Implement a vector (mutable array with automatic resizing):
-    <ul>
-      <li>[x] size() - number of items</il>
-      <li>[x] New raw data array with allocated memory (default = 16, or power of 2 - 16, 32, 64, ...)</il>
-      <li>[x] capacity() - number of items it can hold</il>
-      <li>[x] is_empty()</il>
-      <li>[x] at(index) - returns item at given index, blows up if index out of bounds</il>
-      <li>[x] push(item)</il>
-      <li>[x] insert(index, item) - inserts item at index, shifts that index's value and trailing elements to the right</il>
-      <li>[x] prepend(item) - inserts item at index 0</il>
-      <li>[x] pop() - remove from end, return value</il>
-      <li>[x] delete(index) - delete item at index, shifting all trailing elements left</il>
-      <li>[x] remove(item) - looks for value and removes index holding it (even if in multiple places)</il>
-      <li>[x] find(item) - looks for value and returns first index with that value, -1 if not found</il>
-      <li>
-        [x] resize(new_capacity) // private function
-        <ul>
-          <li>[x] when you reach capacity, resize to double the size</li>
-          <li>[x] when popping an item, if size is 1/4 of capacity, resize to half</li>
-        </ul>
-      </il>
-    </ul>
-</ul>
-<ul>
-  <li>[x] Time
-    <ul>
-      <li>O(1) to add/remove at end (amortized for allocations for more space), index, or update</li>
-      <li>(n) to insert/remove elsewhere</li>
-    </ul>
-  </li>
-</ul>
-<ul>
-  <li>[x] Space
-    <ul>
-      <li>contiguous in memory, so proximity helps performance</li>
-      <li>space needed = (array capacity, which is >= n) * size of item, but even if 2n, still O(n)</li>
-    </ul>
-  </li>
-</ul>
-</details>
 
 <a id="linked-lists"></a>
 
@@ -443,7 +384,7 @@ The original credit goes to the [coding-interview-university](https://github.com
       <li>[ ] <a href="https://www.youtube.com/watch?v=gm8DUJJhmY4&index=34&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P">Binary tree traversal: Preorder, Inorder, Postorder (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=yEwSGhSsT0U&index=35&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P">Check if a binary tree is binary search tree or not (video)</a></li>
     </ul>
-</ul> 
+</ul>
 <ul>
   <li>Deletion:</li>
   <ul>
@@ -718,17 +659,6 @@ The original credit goes to the [coding-interview-university](https://github.com
   </ul>
 </ul>
 </details>
-
----
-
-## Practice Problems
-
-|  #  | Tags           |              |       Problems Set       | Easy | Medium | Hard | BOJ Problems |
-| :-: | :------------- | :----------- | :----------------------: | :--: | :----: | :--: | :----------: |
-| 01  | Data Structure | Arrays       |   [View](./01-arrays)    |  12  |   1    |  2   |      0       |
-| 02  | Data Structure | Linked Lists | [View](./02-linkedlists) |  10  |   5    |  3   |      0       |
-| 03  | Data Structure | Stack        |    [View](./03-stack)    |  4   |   6    |  4   |      10      |
-| 03  | Data Structure | Queue        |    [View](./04-queue)    |  2   |   4    |  2   |      10      |
 
 <!--
 - [ ] 우선순위 큐 (Priority Queue)

@@ -108,11 +108,15 @@ class DoublyLinkedList {
         deletedNode.prev.next = deletedNode.next;
         deletedNode.next.prev = deletedNode.prev;
         this.count -= 1;
-        return deletedNode;
+      } else if (this.head === this.tail) {
+        this.head = null;
+        this.tail = null;
       } else if (deletedNode === this.head) {
-        return this.deleteHead();
+        this.head = this.head.next;
+        if (this.head) this.head.prev = null;
       } else if (deletedNode === this.tail) {
-        return this.deleteTail();
+        this.tail = this.tail.prev;
+        if (this.tail) this.tail.next = null;
       }
     }
 
@@ -127,17 +131,14 @@ class DoublyLinkedList {
       return null;
     }
 
-    let deletedNode: ListNode = null;
+    let deletedNode: ListNode = this.head;
 
     if (this.head === this.tail) {
-      deletedNode = this.head;
       this.head = null;
       this.tail = null;
-
       return deletedNode;
     }
 
-    deletedNode = this.head;
     this.head = this.head.next;
     if (this.head) this.head.prev = null;
 
@@ -209,6 +210,25 @@ class DoublyLinkedList {
     while (curr) {
       str += `${curr.value} `;
       curr = curr.next;
+    }
+
+    console.log(str);
+  }
+
+  /**
+   * @return void
+   */
+  printReverse(): void {
+    if (this.empty()) {
+      console.error('list is empty');
+      return;
+    }
+    let curr: ListNode = this.tail;
+    let str: string = '';
+
+    while (curr) {
+      str += `${curr.value} `;
+      curr = curr.prev;
     }
 
     console.log(str);

@@ -20,11 +20,11 @@ prepend(head, tail, value) → void
     n      ← Node(value)
     n.next ← head
 
-    IF head != ø
+    IF head != Ø
         head.prev ← n
     END IF
 
-    IF tail == ø
+    IF tail == Ø
         tail ← n
     END IF
 
@@ -44,27 +44,77 @@ append(head, tail, value) → void
     n      ← Node(value)
     n.prev ← tail
 
-    IF tail != ø
+    IF tail != Ø
         tail.next ← n
     END IF
     tail ← n
 
-    IF head == ø
+    IF head == Ø
         head ← n
     END IF
 END append
 ```
 
+### deleteHead
+
+```text
+deleteHead(head, tail, del) → Node
+    Pre: head is the first node in the list
+         tail is the last node in the list
+         del stores a node to be deleted
+    Post: head has been replaced
+
+    del ← Ø
+
+    IF head == tail
+        del  ← head
+        head ← Ø
+        tail ← Ø
+    ELSE IF head != Ø
+        del       ← head
+        head      ← head.next
+        head.prev ← Ø
+    END IF
+
+    RETURN del
+END
+```
+
+### deleteTail
+
+```text
+deleteTail(head, tail, del) → Node
+    Pre: head is the first node in the list
+         tail is the last node in the list
+         del stores a node to be deleted
+    Post: tail has been replaced
+
+        del ← Ø
+
+    IF tail == head
+        del  ← tail
+        head ← Ø
+        tail ← Ø
+    ELSIF tail != Ø
+        del       ← head
+        tail      ← tail.prev
+        tail.next ← Ø
+    END IF
+
+    RETURN del
+END
+```
+
 ### delete
 
 ```text
-delete(head, tail, value) → Node | ø
+delete(head, tail, value) → Node | Ø
     Pre: head is the 1st node in the list
          tail is the last node in the list
          value is the value we're going to remove from the list
-    Post: a node is removed from the list and returned; otherwise, return ø
+    Post: a node is removed from the list and returned; otherwise, return Ø
 
-    // FIND returns the node with a given value or ø
+    // FIND returns the node with a given value or Ø
     deletedNode ← call FIND(value)
 
     IF deletedNode
@@ -73,14 +123,14 @@ delete(head, tail, value) → Node | ø
             deletedNode.next.prev ← deletedNode.prev;
             RETURN deletedNode;
         ELSIF deletedNode == head && deletedNode == tail
-            head ← ø
-            tail ← ø
+            head ← Ø
+            tail ← Ø
         ELSIF deletedNode == head
             head       ← head.next
-            head?.prev ← ø
+            head?.prev ← Ø
         ELSIF deletedNode == tail
             tail       ← tail.prev
-            tail?.next ← ø
+            tail?.next ← Ø
         END IF
     END IF
 
@@ -96,7 +146,7 @@ reverseTraversal(tail)
     Post: a list has been traversed in reverse order
 
     n ← tail
-    WHILE n != ø
+    WHILE n != Ø
         print n.value
         n ← n.prev
     END WHILE

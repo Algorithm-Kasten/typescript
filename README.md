@@ -91,20 +91,20 @@ The original credit goes to the [coding-interview-university](https://github.com
   </li>
 </ul>
 <ul>
-  <li>[ ] Doubly-linked List:
+  <li>[x] Doubly-linked List:
   <ul>
-    <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD">Doubly Linked List (video)</a></li>
-    <li>[ ] (<b>Optional</b>) Implement Doubly-Linked List</li>
+    <li>[x] <a href="https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD">Doubly Linked List (video)</a></li>
+    <li>[x] (<b>Optional</b>) Implement Doubly-Linked List</li>
       <ul>
-        <li>[ ] push_front(value) - adds an item to the front of the list</li>
-        <li>[ ] pop_front() - remove front item and return its value</li>
-        <li>[ ] push_back(value) - adds an item at the end</li>
-        <li>[ ] pop_back() - removes end item and returns its value</li>
-        <li>[ ] insert(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
-        <li>[ ] erase(index) - removes node at given index</li>
-        <li>[ ] value_n_from_end(n) - returns the value of the node at nth position from the end of the list</li>
-        <li>[ ] reverse() - reverses the list</li>
-        <li>[ ] remove_value(value) - removes the first item in the list with this value</li>
+        <li>[x] prepend(value) - adds an item to the front of the list</li>
+        <li>[x] deleteHead() - remove front item and return its value</li>
+        <li>[x] append(value) - adds an item at the end</li>
+        <li>[x] deleteTail() - removes end item and returns its value</li>
+        <li>[x] insert(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
+        <li>[x] erase(index) - removes node at given index</li>
+        <li>[x] reverse() - reverses the list</li>
+        <li>[x] removeValue(value) - removes the first item in the list with this value</li>
+        <li>[x] find(value) - returns the 1st node with a value if exists; othewise returns null</li>
       </ul>
     </li>
   </ul>

@@ -1,26 +1,26 @@
-type ListNode = DoublyLinkedListNode | null;
+type ListNode<T> = DoublyLinkedListNode<T> | null;
 
-class DoublyLinkedListNode {
-  value: number;
-  prev: ListNode;
-  next: ListNode;
+class DoublyLinkedListNode<T> {
+  value: T;
+  prev: ListNode<T>;
+  next: ListNode<T>;
 
   /**
-   * @param value - readonly number
+   * @param value - Type
    * @param prev - DoublyLinkedListNode | null
    * @param next - DoublyLinkedListNode | null
    */
-  constructor(value: number, prev: ListNode = null, next: ListNode = null) {
+  constructor(value: T, prev: ListNode<T> = null, next: ListNode<T> = null) {
     this.value = value;
     this.prev = prev;
     this.next = next;
   }
 }
 
-class DoublyLinkedList {
+class DoublyLinkedList<T> {
   private count: number;
-  head: ListNode;
-  tail: ListNode;
+  head: ListNode<T>;
+  tail: ListNode<T>;
 
   constructor() {
     this.count = 0;
@@ -29,29 +29,29 @@ class DoublyLinkedList {
   }
 
   /**
-   * @param value - number
+   * @param value - Type
    * @return void
    */
-  prepend(value: number): void {
-    let newNode = new DoublyLinkedListNode(value, null, this.head);
-    this.head && (this.head.prev = newNode);
+  prepend(value: T): void {
+    let newNode = new DoublyLinkedListNode<T>(value, null, this.head);
     this.head = newNode;
 
     if (null === this.tail) {
+      newNode.next = this.tail;
       this.tail = newNode;
+      this.tail.next = null;
       this.tail.prev = this.head;
-      this.head.next = this.tail;
     }
 
     this.count += 1;
   }
 
   /**
-   * @param value - number
+   * @param value - Type
    * @return void
    */
-  append(value: number): void {
-    let newNode = new DoublyLinkedListNode(value, this.tail);
+  append(value: T): void {
+    let newNode = new DoublyLinkedListNode<T>(value, this.tail);
     this.tail && (this.tail.next = newNode);
     this.tail = newNode;
 
@@ -65,11 +65,11 @@ class DoublyLinkedList {
   }
 
   /**
-   * @param value - number
+   * @param value - Type
    * @param index - number (1-based index)
    * @return void
    */
-  insert(value: number, index: number): void {
+  insert(value: T, index: number): void {
     if (this.head === null) {
       this.prepend(value);
       return;
@@ -82,13 +82,13 @@ class DoublyLinkedList {
     } else if (index === this.count) {
       this.append(value);
     } else {
-      let curr: ListNode = this.head;
+      let curr: ListNode<T> = this.head;
       while (curr && index > 1) {
         curr = curr.next;
         --index;
       }
 
-      let newNode = new DoublyLinkedListNode(value, curr, curr?.next);
+      let newNode = new DoublyLinkedListNode<T>(value, curr, curr?.next);
       if (curr && curr.next) {
         curr.next.prev = newNode;
         curr.next = newNode;
@@ -98,11 +98,11 @@ class DoublyLinkedList {
   }
 
   /**
-   * @param value - number
+   * @param value - T
    * @return ListNode - DoublyLinkedListNode | null
    */
-  removeValue(value: number): ListNode {
-    let deletedNode: ListNode = this.find(value);
+  removeValue(value: T): ListNode<T> {
+    let deletedNode: ListNode<T> = this.find(value);
 
     if (deletedNode) {
       if (deletedNode.prev && deletedNode.next) {
@@ -127,12 +127,12 @@ class DoublyLinkedList {
   /**
    * @return ListNode - DoublyLinkedListNode | null
    */
-  deleteHead(): ListNode {
+  deleteHead(): ListNode<T> {
     if (this.head === null) {
       return null;
     }
 
-    let deletedNode: ListNode = this.head;
+    let deletedNode: ListNode<T> = this.head;
 
     if (this.head === this.tail) {
       this.head = null;
@@ -150,12 +150,12 @@ class DoublyLinkedList {
   /**
    * @return ListNode - DoublyLinkedListNode | null
    */
-  deleteTail(): ListNode {
+  deleteTail(): ListNode<T> {
     if (this.tail === null) {
       return null;
     }
 
-    let deletedNode: ListNode = null;
+    let deletedNode: ListNode<T> = null;
 
     if (this.head === this.tail) {
       deletedNode = this.tail;
@@ -177,7 +177,7 @@ class DoublyLinkedList {
    * @param index - number (0-based)
    * @returns ListNode
    */
-  erase(index: number): ListNode {
+  erase(index: number): ListNode<T> {
     let deletedNode = null;
 
     if (0 === index) {
@@ -187,7 +187,7 @@ class DoublyLinkedList {
       return this.deleteTail();
     }
 
-    let curr: ListNode = this.head;
+    let curr: ListNode<T> = this.head;
     while (curr && index > 0) {
       curr = curr.next;
       --index;
@@ -220,11 +220,11 @@ class DoublyLinkedList {
   }
 
   /**
-   * @param value - number
+   * @param value - Type
    * @return ListNode - DoublyLinkedListNode | null
    */
-  find(value: number): ListNode {
-    let curr: ListNode = this.head;
+  find(value: T): ListNode<T> {
+    let curr: ListNode<T> = this.head;
 
     while (curr) {
       if (curr.value === value) {
@@ -251,7 +251,7 @@ class DoublyLinkedList {
       console.error('list is empty');
       return;
     }
-    let curr: ListNode = this.head;
+    let curr: ListNode<T> = this.head;
     let str: string = '';
 
     while (curr) {
@@ -270,7 +270,7 @@ class DoublyLinkedList {
       console.error('list is empty');
       return;
     }
-    let curr: ListNode = this.tail;
+    let curr: ListNode<T> = this.tail;
     let str: string = '';
 
     while (curr) {
@@ -281,3 +281,9 @@ class DoublyLinkedList {
     console.log(str);
   }
 }
+
+let list = new DoublyLinkedList<string>();
+list.prepend('abc');
+list.prepend('def');
+list.printReverse();
+list.print();

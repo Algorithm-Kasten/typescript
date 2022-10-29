@@ -18,17 +18,15 @@ prepend(head, tail, value) → void
     Post: a new node has been inserted at the head of the list
 
     n      ← Node(value)
-    n.next ← head
 
-    IF head != Ø
-        head.prev ← n
-    END IF
-
-    IF tail == Ø
+    IF head === Ø
+        head ← n
         tail ← n
+    ELSE
+        n.next    ← head
+        head.prev ← n
+        head      ← n
     END IF
-
-    head ← n
 END prepend
 ```
 
@@ -42,15 +40,14 @@ append(head, tail, value) → void
     Post: a new node has been inserted at the end of the list
 
     n      ← Node(value)
-    n.prev ← tail
 
-    IF tail != Ø
-        tail.next ← n
-    END IF
-    tail ← n
-
-    IF head == Ø
+    IF tail === Ø
+        tail ← n
         head ← n
+    ELSE
+        n.prev    ← tail
+        tail.next ← n
+        tail 　　　← n
     END IF
 END append
 ```

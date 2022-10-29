@@ -33,16 +33,16 @@ class DoublyLinkedList<T> {
    * @return void
    */
   prepend(value: T): void {
-    let newNode = new DoublyLinkedListNode<T>(value, null, this.head);
-    this.head = newNode;
+    let newNode = new DoublyLinkedListNode(value);
 
-    if (null === this.tail) {
-      newNode.next = this.tail;
+    if (null === this.head) {
+      this.head = newNode;
       this.tail = newNode;
-      this.tail.next = null;
-      this.tail.prev = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+      this.head = newNode;
     }
-
     this.count += 1;
   }
 
@@ -51,14 +51,15 @@ class DoublyLinkedList<T> {
    * @return void
    */
   append(value: T): void {
-    let newNode = new DoublyLinkedListNode<T>(value, this.tail);
-    this.tail && (this.tail.next = newNode);
-    this.tail = newNode;
+    let newNode = new DoublyLinkedListNode<T>(value);
 
-    if (null === this.head) {
+    if (null === this.tail) {
+      this.tail = newNode;
       this.head = newNode;
-      this.head.next = this.tail;
-      this.tail.prev = this.head;
+    } else {
+      newNode.prev = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
 
     this.count += 1;
@@ -281,9 +282,3 @@ class DoublyLinkedList<T> {
     console.log(str);
   }
 }
-
-let list = new DoublyLinkedList<string>();
-list.prepend('abc');
-list.prepend('def');
-list.printReverse();
-list.print();

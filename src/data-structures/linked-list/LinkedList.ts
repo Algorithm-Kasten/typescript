@@ -1,4 +1,4 @@
-type ListNode<T> = LinkedListNode<T> | null;
+export type ListNode<T> = LinkedListNode<T> | null;
 
 export class LinkedListNode<T> {
   readonly value: T;

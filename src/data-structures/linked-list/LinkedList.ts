@@ -1,6 +1,6 @@
 type ListNode<T> = LinkedListNode<T> | null;
 
-class LinkedListNode<T> {
+export class LinkedListNode<T> {
   readonly value: T;
   next: ListNode<T>;
 
@@ -14,7 +14,7 @@ class LinkedListNode<T> {
   }
 }
 
-class LinkedList<T> {
+export class LinkedList<T> {
   private count: number;
   head: ListNode<T>;
   tail: ListNode<T>;

@@ -1,6 +1,6 @@
 type ListNode<T> = DoublyLinkedListNode<T> | null;
 
-class DoublyLinkedListNode<T> {
+export class DoublyLinkedListNode<T> {
   value: T;
   prev: ListNode<T>;
   next: ListNode<T>;
@@ -17,7 +17,7 @@ class DoublyLinkedListNode<T> {
   }
 }
 
-class DoublyLinkedList<T> {
+export class DoublyLinkedList<T> {
   private count: number;
   head: ListNode<T>;
   tail: ListNode<T>;

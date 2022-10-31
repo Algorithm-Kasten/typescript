@@ -168,7 +168,7 @@ The original credit goes to the [coding-interview-university](https://github.com
   </ul>
 </ul>
 <ul>
-  <li>[ ] (<b>Optional</b>) Implement using a fixed-sized array - optional because it's trivial:</li>
+  <li>[x] (<b>Optional</b>) Implement using a fixed-sized array - optional because it's trivial:</li>
   <ul>
     <li>[ ] push(data) - adds data at position top</li>
     <li>[ ] pop() - returns data and removes recently added element (top)</li>

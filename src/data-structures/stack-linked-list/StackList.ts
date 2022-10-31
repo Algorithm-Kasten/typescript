@@ -1,7 +1,7 @@
 import { ListNode, LinkedListNode } from '../linked-list/LinkedList';
 
 export class StackList<T> {
-  top: ListNode<T>; // position
+  top: ListNode<T>;
 
   constructor(value: T | null = null) {
     if (value) {

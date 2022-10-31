@@ -155,16 +155,16 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Stack</summary>
 <ul>
-  <li>[ ] <a href="https://www.geeksforgeeks.org/stack-data-structure-introduction-program/">Stack Data Structure (Introduction and Program)</a></li>
-  <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/stacks-UdKzQ">Stack (video)</a></li>
+  <li>[x] <a href="https://www.geeksforgeeks.org/stack-data-structure-introduction-program/">Stack Data Structure (Introduction and Program)</a></li>
+  <li>[x] <a href="https://www.coursera.org/lecture/data-structures/stacks-UdKzQ">Stack (video)</a></li>
 </ul>
 <ul>
-  <li>[ ] Implement using a linked list:</li>
+  <li>[x] Implement using a linked list:</li>
   <ul>
-    <li>[ ] push(data) - adds data at position top</li>
-    <li>[ ] pop() - returns data and removes recently added element (top)</li>
-    <li>[ ] peek() - returns data at top of the stack</li>
-    <li>[ ] empty()</li>
+    <li>[x] push(data) - adds data at position top</li>
+    <li>[x] pop() - returns data and removes recently added element (top)</li>
+    <li>[x] peek() - returns data at top of the stack</li>
+    <li>[x] empty()</li>
   </ul>
 </ul>
 <ul>
@@ -178,7 +178,7 @@ The original credit goes to the [coding-interview-university](https://github.com
   </ul>
 </ul>
 <ul>
-  <li>[ ] Cost:</li>
+  <li>[x] Cost:</li>
   <ul>
      <li>push: O(1) (amortized, linked list and array)</li>
      <li>pop: O(1) (linked list and array)</li>
@@ -367,7 +367,7 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Binary Search Tree (BST)</summary>
 <ul>
-  <li>[ ] <a href="https://www.youtube.com/watch?v=x6At0nzX92o&index=1&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">BST Review (video)</a></li>
+  <li>[x] <a href="https://www.youtube.com/watch?v=x6At0nzX92o&index=1&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">BST Review (video)</a></li>
   <ul>
     <li>If you're going to allow duplicate valuse, it's better to insert in on the right subtree. This will give you a stable order when doing inorder traversal.</li>
   </ul>
@@ -400,7 +400,7 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Implement BST:</li>
   <ul>
-    <li>[ ] insert(data) - insert data into tree</li>
+    <li>[x] insert(data) - insert data into tree</li>
     <li>[ ] get_node_count() - get count of values stored</li>
     <li>[ ] print_values() - prints the values in the tree, from min to max</li>
     <li>[ ] delete_tree()</li>

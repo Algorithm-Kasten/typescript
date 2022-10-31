@@ -4,9 +4,9 @@ Stack is a linear data structure that follows a particular order (Last-In, Last-
 
 ![represent the LIFO principle by using push and pop operation](https://cdn.programiz.com/sites/tutorial2program/files/stack.png 'Stack operations')
 
-|      | push | pop  | peek | empty |
-| :--: | :--: | :--: | :--: | :---: |
-| Time | O(1) | O(1) | O(1) | O(1)  |
+|      | push | pop  | peek | empty | full |
+| :--: | :--: | :--: | :--: | :---: | :--: |
+| Time | O(1) | O(1) | O(1) | O(1)  | O(1) |
 
 ## Pseudocode for Basic Operations
 
@@ -57,5 +57,18 @@ empty(stack, top) → boolean
     Post: returns true if stack is empty; otherwise false;
 
     RETURN top === 0
+END
+```
+
+### full
+
+```text
+full(stack, top, size) → boolean
+    Pre: stack is the stack array
+         top is an index or a position in stack
+         size is the array size (capacity)
+    Post: returns true if stack is full; otherwise false;
+
+    RETURN top === size
 END
 ```

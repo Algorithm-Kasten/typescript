@@ -1,5 +1,9 @@
 # Preorder Traverrsal
 
+![BST](../inorder/bst-example.svg)
+
+Preorder: `5 2 -5 -7 -3 20 10 12 30 35 32 33`
+
 ## Pseudocode
 
 ```text
@@ -21,7 +25,10 @@ END
 
 | Time | Space |
 | :--: | :---: |
-| O(V) | O(1)  |
+| O(V) | O(h)  |
+
+- `V` - total number of vertices
+- `h` - tree height
 
 ## Problem
 

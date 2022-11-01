@@ -1,4 +1,4 @@
-# Preorder Traverrsal
+# Preorder Traversal
 
 ![BST](../inorder/bst-example.svg)
 

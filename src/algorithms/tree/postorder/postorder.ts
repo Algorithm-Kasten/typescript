@@ -45,6 +45,28 @@ export class BST<T> {
     this.postorder(node?.right);
     process.stdout.write(`${node?.value} `);
   }
+
+  postorderIter(): void {
+    if (!this.root) return;
+    else {
+      let stack1: TreeNode<T>[] = [this.root];
+      let stack2: TreeNode<T>[] = [];
+      let curr: TreeNode<T>;
+
+      while (stack1.length > 0) {
+        curr = stack1.pop();
+        stack2.push(curr);
+
+        if (curr && curr.left) stack1.push(curr.left);
+        if (curr && curr.right) stack1.push(curr.right);
+      }
+
+      while (stack2.length > 0) {
+        curr = stack2.pop();
+        process.stdout.write(`${curr?.value} `);
+      }
+    }
+  }
 }
 
 let bst = new BST<number>();
@@ -63,4 +85,6 @@ bst.insert(33);
 
 console.log('postorder:');
 bst.postorder();
+console.log();
+bst.postorderIter();
 console.log();

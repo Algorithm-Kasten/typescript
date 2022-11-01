@@ -45,6 +45,25 @@ export class BST<T> {
     process.stdout.write(`${node?.value} `);
     this.inorder(node?.right);
   }
+
+  inorderIter(): void {
+    if (!this.root) return;
+    else {
+      let stack: TreeNode<T>[] = [];
+      let curr: TreeNode<T> = this.root;
+
+      while (curr || stack.length > 0) {
+        while (curr) {
+          stack.push(curr);
+          curr = curr.left;
+        }
+
+        curr = stack.pop();
+        process.stdout.write(`${curr?.value} `);
+        curr = curr?.right;
+      }
+    }
+  }
 }
 
 let bst = new BST<number>();
@@ -63,4 +82,6 @@ bst.insert(33);
 
 console.log('Inorder:');
 bst.inorder();
+console.log();
+bst.inorderIter();
 console.log();

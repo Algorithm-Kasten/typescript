@@ -38,12 +38,31 @@ export class BST<T> {
     return node;
   }
 
-  preorder(node: TreeNode<T> = this.root) {
+  preorder(node: TreeNode<T> = this.root): void {
     if (null === node) return;
 
     process.stdout.write(`${node?.value} `);
     this.preorder(node?.left);
     this.preorder(node?.right);
+  }
+
+  preorderIter(): void {
+    if (!this.root) return;
+    else {
+      let stack: TreeNode<T>[] = [];
+      let curr: TreeNode<T> = this.root;
+
+      while (curr || stack.length > 0) {
+        while (curr) {
+          stack.push(curr);
+          process.stdout.write(`${curr?.value} `);
+          curr = curr.left;
+        }
+
+        curr = stack.pop();
+        curr = curr?.right;
+      }
+    }
   }
 }
 
@@ -63,4 +82,6 @@ bst.insert(33);
 
 console.log('preorder:');
 bst.preorder();
+console.log();
+bst.preorderIter();
 console.log();

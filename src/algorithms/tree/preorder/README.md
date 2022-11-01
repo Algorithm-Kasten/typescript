@@ -35,18 +35,18 @@ preorder(root) → void
     END IF
 
     stack ← new Stack
-    curr  ← root
+    stack.push(root)
 
-    WHILE (curr) OR (stack IS NOT empty)
-        WHILE curr
-            stack.push(curr)
-            PRINT curr
-            curr ← curr.left
-        END WHILE
-
+    WHILE stack IS NOT empty
         curr ← stack.top
+        PRINT curr
         stack.pop
-        curr ← curr.right
+
+        IF curr.right
+            stack.push(curr.right)
+        ELSIF curr.lfet
+            stack.push(curr.left)
+        END
     END WHILE
 END
 ```

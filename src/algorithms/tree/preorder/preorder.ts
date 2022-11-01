@@ -49,18 +49,14 @@ export class BST<T> {
   preorderIter(): void {
     if (!this.root) return;
     else {
-      let stack: TreeNode<T>[] = [];
-      let curr: TreeNode<T> = this.root;
+      let stack: TreeNode<T>[] = [this.root];
 
-      while (curr || stack.length > 0) {
-        while (curr) {
-          stack.push(curr);
-          process.stdout.write(`${curr?.value} `);
-          curr = curr.left;
-        }
+      while (stack.length > 0) {
+        let curr = stack.pop();
+        process.stdout.write(`${curr?.value} `);
 
-        curr = stack.pop();
-        curr = curr?.right;
+        if (curr && curr.right) stack.push(curr.right);
+        if (curr && curr.left) stack.push(curr.left);
       }
     }
   }

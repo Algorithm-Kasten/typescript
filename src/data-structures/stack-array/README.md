@@ -2,7 +2,7 @@
 
 Stack is a linear data structure that follows a particular order (Last-In, Last-Out; LIFO) in which operations are performed.
 
-![represent the LIFO principle by using push and pop operation](https://cdn.programiz.com/sites/tutorial2program/files/stack.png 'Stack operations')
+<a href="https://www.programiz.com/dsa/stack"><img src="https://cdn.programiz.com/sites/tutorial2program/files/stack.png" title="programiz.com" alt="Stack Operations" /></a>
 
 |      | push | pop  | peek | empty | full |
 | :--: | :--: | :--: | :--: | :---: | :--: |

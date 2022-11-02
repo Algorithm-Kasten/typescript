@@ -194,8 +194,8 @@ The original credit goes to the [coding-interview-university](https://github.com
 <summary>Queue</summary>
 <ul>
   <li>[x] <a href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/">Queue | Set 1 (Introduction and Array Implementation)</a></li>
-  <li>[ ] <a href="https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/">Circular Queue (Ring Buffer)</a></li>
-  <li>[ ] <a href="https://en.wikipedia.org/wiki/Circular_buffer">Circular buffer/FIFO</a></li>
+  <li>[x] <a href="https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/">Circular Queue (Ring Buffer)</a></li>
+  <li>[x] <a href="https://en.wikipedia.org/wiki/Circular_buffer">Circular buffer/FIFO</a></li>
 </ul>
 <ul>
   <li>[x] Implement a queue</li>
@@ -216,13 +216,13 @@ The original credit goes to the [coding-interview-university](https://github.com
     </ul>
 </ul>
 <ul>
-  <li>[ ] Implement a Circular Queue - LinkedList
+  <li>[x] Implement a Circular Queue - LinkedList
     <ul>
-      <li>[ ] enqueue(data) - add data at the end of the queue </li>
-      <li>[ ] dequeue() - remove and return the first element in the queue </li>
-      <li>[ ] empty() - check if queue is empty</li>
-      <li>[ ] front() - gets the first element</li>
-      <li>[ ] rear() - gets the last element</li>
+      <li>[x] enqueue(data) - add data at the end of the queue </li>
+      <li>[x] dequeue() - remove and return the first element in the queue </li>
+      <li>[x] empty() - check if queue is empty</li>
+      <li>[x] front() - gets the first element</li>
+      <li>[x] rear() - gets the last element</li>
     </ul>
   </li>
 </ul>

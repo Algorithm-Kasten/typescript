@@ -193,25 +193,25 @@ The original credit goes to the [coding-interview-university](https://github.com
 <details>
 <summary>Queue</summary>
 <ul>
-  <li>[ ] <a href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/">Queue | Set 1 (Introduction and Array Implementation)</a></li>
+  <li>[x] <a href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/">Queue | Set 1 (Introduction and Array Implementation)</a></li>
   <li>[ ] <a href="https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/">Circular Queue (Ring Buffer)</a></li>
   <li>[ ] <a href="https://en.wikipedia.org/wiki/Circular_buffer">Circular buffer/FIFO</a></li>
 </ul>
 <ul>
-  <li>[ ] Implement a queue</li>
+  <li>[x] Implement a queue</li>
     <ul>
-      <li>[ ] using a linked-list (w/ tail pointer):</li>
+      <li>[x] using a linked-list (w/ tail pointer):</li>
       <ul>
-        <li>[ ] enqueue(data) - add data at the end of the queue </li>
-        <li>[ ] dequeue() - remove and return the first element in the queue </li>
-        <li>[ ] empty() - check if queue is empty </li>
+        <li>[x] enqueue(data) - add data at the end of the queue </li>
+        <li>[x] dequeue() - remove and return the first element in the queue </li>
+        <li>[x] empty() - check if queue is empty </li>
       </ul>
-      <li>[ ] using a fixed-sized array:</li>
+      <li>[x] using a fixed-sized array:</li>
       <ul>
-        <li>[ ] enqueue(data) - adds a data at the end of the list iff space is available</li>
-        <li>[ ] dequeue() - remove and return the first element in the queue</li>
-        <li>[ ] empty() - check if queue is empty </li>
-        <li>[ ] full() - check if queue is full </li>
+        <li>[x] enqueue(data) - adds a data at the end of the list iff space is available</li>
+        <li>[x] dequeue() - remove and return the first element in the queue</li>
+        <li>[x] empty() - check if queue is empty </li>
+        <li>[x] full() - check if queue is full </li>
       </ul>
     </ul>
 </ul>

@@ -1,8 +1,8 @@
 # Postorder Traversal
 
-![BST](../inorder/bst-example.svg)
+![postorder](./postorder.jpg)
 
-Postorder: `-7 -3 -5 2 12 10 33 32 35 30 20 5`
+Postorder: `1 7 5 20 35 30 15 10`
 
 ## Pseudocode
 
@@ -13,7 +13,7 @@ postorder(node) → Node
     Pre: node is any arbitrary node in the list
     Post: we have traversed the list in postorder
 
-    IF node == Ø
+    IF node == ø
         RETURN
     END IF
 
@@ -30,7 +30,7 @@ postorder(root) → void
     Pre: root is the root node of the tree
     Post: we have traversed the list in preorder
 
-    IF node == Ø
+    IF node == ø
         RETURN
     END IF
 

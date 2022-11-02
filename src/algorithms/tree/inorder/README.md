@@ -1,8 +1,8 @@
 # Inorder Traversal
 
-![BST](./bst-example.svg)
+![BST](./inorder.jpg)
 
-Inorder: `-7 -5 -3 2 5 10 12 20 30 32 33 35`
+Inorder: `1 5 7 10 15 20 30 35`
 
 ## Pseudocode
 
@@ -13,7 +13,7 @@ inorder(node) → Node
     Pre: node is any arbitrary node in the list
     Post: we have traversed the list in inorder
 
-    IF node == Ø
+    IF node == ø
         RETURN
     END IF
 
@@ -30,7 +30,7 @@ inorder(root) → void
     Pre: root is the root node of the tree
     Post: we have traversed the list in preorder
 
-    IF node == Ø
+    IF node == ø
         RETURN
     END IF
 

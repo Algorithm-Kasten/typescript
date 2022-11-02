@@ -46,6 +46,12 @@ dequeue(queue<T>, front, rear) → Node<T>
          rear references the last node in the queue
     Post: front element has been removed from the queue
 
+    IF front === rear
+        front ← ø
+        rear  ← ø
+        RETURN ø
+    END IF
+
     elem      ← front
     front     ← front.next
     rear.next ← front

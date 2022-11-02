@@ -9,3 +9,4 @@
 - Queue
   - [Queue Array](./queue-array/)
   - [Queue Linked List](./queue-linked-list/)
+  - [Circular Queue Linked List](./circular-queue)

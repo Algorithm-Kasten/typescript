@@ -1,14 +1,14 @@
-# Queue Linked List
+# Circular Queue
 
-Queue is a linear data structure that follows a particular order (First-In, First-Out) in which operations are performed.
+Circular Queue is a [queue](../queue-linked-list) where rear node is connected to the front node creating a circular list.
 
-<a href="https://www.programiz.com/dsa/queue"><img src="https://cdn.programiz.com/sites/tutorial2program/files/queue.png" title="programiz.com" alt="Queue" /></a>
+![Circular Queue](./circular-queue.svg)
 
 In programming, the term **enqueue** refers to adding an item to the queue and **dequeue** for removing an item from the queue.
 
-|      | enqueue | dequeue | empty |
-| :--: | :-----: | :-----: | :---: |
-| Time |  O(1)   |  O(1)   | O(1)  |
+|      | enqueue | dequeue | empty | front | rear |
+| :--: | :-----: | :-----: | :---: | :---: | :--: |
+| Time |  O(1)   |  O(1)   | O(1)  | O(1)  | O(1) |
 
 ## Pseudocode for Basic Operations
 
@@ -28,7 +28,9 @@ enqueue(queue<T>, front, rear, value) → void
         front      ← n
         rear       ← n
         front.next ← rear
+        rear.next  ← front
     ELSE
+        n.next    ← front
         rear.next ← n
         rear      ← n
     END IF
@@ -44,8 +46,9 @@ dequeue(queue<T>, front, rear) → Node<T>
          rear references the last node in the queue
     Post: front element has been removed from the queue
 
-    elem  ← front
-    front ← front.next
+    elem      ← front
+    front     ← front.next
+    rear.next ← front
     RETURN elem
 END
 ```

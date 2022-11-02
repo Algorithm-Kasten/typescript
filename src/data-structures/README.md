@@ -6,3 +6,6 @@
 - Stack
   - [Stack Array](./stack-array/)
   - [Stack Linked List](./stack-linked-list/)
+- Queue
+  - [Queue Array](./queue-array/)
+  - [Queue Linked List](./queue-linked-list/)

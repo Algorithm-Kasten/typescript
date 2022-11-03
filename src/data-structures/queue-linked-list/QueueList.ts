@@ -16,13 +16,13 @@ export class QueueList<T> {
   }
 
   empty(): boolean {
-    return this.front === null;
+    return this.front == null;
   }
 
   enqueue(value: T): void {
     let newNode = new LinkedListNode(value);
 
-    if (null === this.front) {
+    if (null == this.front) {
       this.front = newNode;
       this.rear = newNode;
       this.front.next = this.rear;

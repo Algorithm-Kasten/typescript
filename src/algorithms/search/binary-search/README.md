@@ -26,18 +26,18 @@ BinarySearch(arr, len, value) → number
     low  ← 0
     high ← n-1
 
-    WHILE low <= high
+    WHILE (low <= high)
         mid ← low + ((high - low) / 2)
 
-        IF arr[mid] == value
-            RETURN mid
-        ELSIF arr[mid] < value
+        IF (arr[mid] == value)
+            return mid
+        ELSE IF (arr[mid] < value)
             low ← mid + 1
         ELSE
             high ← mid - 1
         END IF
     END WHILE
 
-    RETURN -1
+    return -1
 END BinarySearch
 ```

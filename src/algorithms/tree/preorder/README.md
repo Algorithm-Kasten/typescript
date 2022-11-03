@@ -13,8 +13,8 @@ preorder(node) → Node
     Pre: node is any arbitrary node in the list
     Post: we have traversed the list in preorder
 
-    IF node == ø
-        RETURN
+    IF (node == ø)
+        return
     END IF
 
     print node.value
@@ -30,21 +30,21 @@ preorder(root) → void
     Pre: root is the root node of the tree
     Post: we have traversed the list in preorder
 
-    IF node == ø
-        RETURN
+    IF (node == ø)
+        return
     END IF
 
     stack ← new Stack
     stack.push(root)
 
-    WHILE stack IS NOT empty
+    WHILE (stack != empty)
         curr ← stack.top
-        PRINT curr
+        print curr
         stack.pop
 
-        IF curr.right
+        IF (curr.right)
             stack.push(curr.right)
-        ELSIF curr.lfet
+        ELSE IF (curr.lfet)
             stack.push(curr.left)
         END
     END WHILE

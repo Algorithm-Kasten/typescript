@@ -18,14 +18,14 @@ LinearSearch(T[] arr, int len, T value) → number
     Post: we know the exact position of the value in the list; -1 if not in the list.
 
     i ← 0
-    WHILE i < len
-        IF arr[i] == value
-            RETURN i
+    WHILE (i < len)
+        IF (arr[i] == value)
+            return i
         END IF
 
         i ← i + 1
     END WHILE
 
-    RETURN -1
+    return -1
 END LinearSearch
 ```

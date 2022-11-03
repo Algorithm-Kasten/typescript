@@ -13,22 +13,22 @@ isSymmetric(root) → boolean
 
   q ← Queue{ root.left, root.right }
 
-  WHILE q is not empty
+  WHILE (!q.empty)
     L ← q.pop
     R ← q.pop
 
-    IF (L and R == Ø) or (R and L == Ø)
-      RETURN false
-    ELSIF L and R
-      IF L.val != R.val
-        RETURN false
+    IF ((L and R == ø) or (R and L == ø))
+      return false
+    ELSE IF (L and R)
+      IF (L.val != R.val)
+        return false
       END IF
 
       q.push { L.left, R.right, L.right, R.left }
     END IF
   END WHILE
 
-  RETURN true
+  return true
 END
 ```
 

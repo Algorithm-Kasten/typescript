@@ -36,7 +36,7 @@ dequeue(queue<T>, front, rear) → T
     Post: front element has been removed from the queue
 
     elem ← queue[front++];
-    RETURN elem
+    return elem
 END
 ```
 
@@ -49,7 +49,7 @@ empty(queue<T>, front, rear) → boolean
          front index tracks the first element
     Post: returns true if queue is empty; otherwise false;
 
-    RETURN front === rear
+    return front === rear
 END
 ```
 
@@ -62,6 +62,6 @@ full(queue<T>, size, rear) → boolean
          rear index tracks the most recently added element (last element in queue array)
     Post: returns true if queue is empty; otherwise false;
 
-    RETURN rear === size
+    return rear === size
 END
 ```

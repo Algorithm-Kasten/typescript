@@ -13,8 +13,8 @@ postorder(node) → Node
     Pre: node is any arbitrary node in the list
     Post: we have traversed the list in postorder
 
-    IF node == ø
-        RETURN
+    IF (node == ø)
+        return
     END IF
 
     postorder(node.left)
@@ -30,8 +30,8 @@ postorder(root) → void
     Pre: root is the root node of the tree
     Post: we have traversed the list in preorder
 
-    IF node == ø
-        RETURN
+    IF (node == ø)
+        return
     END IF
 
     s1 ← new Stack
@@ -40,22 +40,22 @@ postorder(root) → void
     curr  ← root
     s1.push(curr)
 
-    WHILE s1 IS NOT EMPTY
+    WHILE (!s1.empty)
         curr ← s1.top
         s1.pop
 
         s2.push(curr)
 
-        IF curr.left
+        IF (curr.left)
             s1.push(curr.left)
-        ELSIF curr.right
+        ELSE IF (curr.right)
             s1.push(curr.right)
         END IF
     END WHILE
 
-    WHILE s2 IS NOT EMPTY
+    WHILE (!s2.empty)
         curr ← s2.top
-        PRINT curr
+        print curr
     END WHILE
 END
 ```

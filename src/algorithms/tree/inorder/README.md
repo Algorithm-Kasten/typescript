@@ -13,8 +13,8 @@ inorder(node) → Node
     Pre: node is any arbitrary node in the list
     Post: we have traversed the list in inorder
 
-    IF node == ø
-        RETURN
+    IF (node == ø)
+        return
     END IF
 
     inorder(node.left)
@@ -30,22 +30,22 @@ inorder(root) → void
     Pre: root is the root node of the tree
     Post: we have traversed the list in preorder
 
-    IF node == ø
-        RETURN
+    IF (node == ø)
+        return
     END IF
 
     stack ← new Stack
     curr  ← root
 
-    WHILE (curr) OR (stack IS NOT empty)
-        WHILE curr
+    WHILE ((curr) || (stack != empty))
+        WHILE (curr)
             stack.push(curr)
             curr ← curr.left
         END WHILE
 
         curr ← stack.top
         stack.pop
-        PRINT curr
+        print curr
         curr ← curr.right
     END WHILE
 END

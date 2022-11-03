@@ -24,7 +24,7 @@ enqueue(queue<T>, front, rear, value) → void
 
     n ← new Node(value)
 
-    IF front IS EQ ø
+    IF (front == ø)
         front      ← n
         rear       ← n
         front.next ← rear
@@ -46,16 +46,16 @@ dequeue(queue<T>, front, rear) → Node<T>
          rear references the last node in the queue
     Post: front element has been removed from the queue
 
-    IF front === rear
+    IF (front == rear)
         front ← ø
         rear  ← ø
-        RETURN ø
+        return ø
     END IF
 
     elem      ← front
     front     ← front.next
     rear.next ← front
-    RETURN elem
+    return elem
 END
 ```
 
@@ -67,6 +67,6 @@ empty(queue<T>, front) → boolean
          front references the first node in the queue
     Post: returns true if queue is empty; otherwise false;
 
-    RETURN front === ø
+    return front == ø
 END
 ```

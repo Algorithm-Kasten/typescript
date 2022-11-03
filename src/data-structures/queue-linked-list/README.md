@@ -24,7 +24,7 @@ enqueue(queue<T>, front, rear, value) → void
 
     n ← new Node(value)
 
-    IF front IS EQ ø
+    IF (front == ø)
         front      ← n
         rear       ← n
         front.next ← rear
@@ -46,7 +46,7 @@ dequeue(queue<T>, front, rear) → Node<T>
 
     elem  ← front
     front ← front.next
-    RETURN elem
+    return elem
 END
 ```
 
@@ -58,6 +58,6 @@ empty(queue<T>, front) → boolean
          front references the first node in the queue
     Post: returns true if queue is empty; otherwise false;
 
-    RETURN front === ø
+    return front === ø
 END
 ```

@@ -58,6 +58,6 @@ empty(queue<T>, front) → boolean
          front references the first node in the queue
     Post: returns true if queue is empty; otherwise false;
 
-    return front === ø
+    return front == ø
 END
 ```

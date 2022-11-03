@@ -49,7 +49,7 @@ empty(queue<T>, front, rear) → boolean
          front index tracks the first element
     Post: returns true if queue is empty; otherwise false;
 
-    return front === rear
+    return front == rear
 END
 ```
 
@@ -62,6 +62,6 @@ full(queue<T>, size, rear) → boolean
          rear index tracks the most recently added element (last element in queue array)
     Post: returns true if queue is empty; otherwise false;
 
-    return rear === size
+    return rear == size
 END
 ```

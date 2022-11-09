@@ -1,4 +1,4 @@
-type ListNode<T> = DoublyLinkedListNode<T> | null;
+export type ListNode<T> = DoublyLinkedListNode<T> | null;
 
 export class DoublyLinkedListNode<T> {
   value: T;

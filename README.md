@@ -227,7 +227,7 @@ The original credit goes to the [coding-interview-university](https://github.com
   </li>
 </ul>
 <ul>
-  <li>[ ] Cost:</li>
+  <li>[x] Cost:</li>
     <ul>
       <li>enqueue: O(1) (amortized, linked list and array)</li>
       <li>dequeue: O(1) (linked list and array)</li>
@@ -235,30 +235,28 @@ The original credit goes to the [coding-interview-university](https://github.com
     </ul>
 </ul>
 <ul>
-  <li>[ ] Implement a Double-Ended Queue - LinkedList
+  <li>[x] Implement a Double-Ended Queue - LinkedList
     <ul>
     <li>
     resource: <a href="https://www.programiz.com/dsa/deque">https://www.programiz.com/dsa/deque</a>
     </li>
     </ul>
     <ul>
-      <li>[ ] addFront(data) - add new data in front of the queue</li>
-      <li>[ ] addRear(data) - add data at the end of the queue </li>
-      <li>[ ] removeFront(data) - remove and return the first element in the queue </li>
-      <li>[ ] removeRear(data) - remove and return the last element in the queue </li>
-      <li>[ ] empty() - check if queue is empty </li>
-      <li>[ ] front() - gets the first element</li>
-      <li>[ ] rear() - gets the last element</li>
+      <li>[x] addFront(data) - add new data in front of the queue</li>
+      <li>[x] addRear(data) - add data at the end of the queue </li>
+      <li>[x] removeFront(data) - remove and return the first element in the queue </li>
+      <li>[x] removeRear(data) - remove and return the last element in the queue </li>
+      <li>[x] empty() - check if queue is empty </li>
+      <li>[x] front() - gets the first element</li>
+      <li>[x] rear() - gets the last element</li>
     </ul>
   </li>
-  <li>
+</ul>
+<ul>
+  <li>[x] Cost:</li>
     <ul>
-      <li>Cost:</li>
-        <ul>
-        <li>All operations are constant except `removeRear`.</li>
-        </ul>
+      <li>All operations are constant except 'removeRear' unless doubly linked list is used with a tail node. </li>
     </ul>
-  </li>
 </ul>
 </details>
 

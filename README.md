@@ -131,17 +131,17 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] Circular-Linked List (singly linked list)
     <ul>
-      <li>[ ] <a href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">Circular Linked List | Set 1 (Introduction and Applications</a></li>
+      <li>[x] <a href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">Circular Linked List | Set 1 (Introduction and Applications</a></li>
       <li>[ ] (<b>Optional</b>) Implement a circular-linked list:
         <ul>
-          <li>[ ] push_front(data) - adds an item to the front of the list</li>
-          <li>[ ] push_back(data) - adds an item at the end</li>
+          <li>[x] pushFront(data) - adds an item to the front of the list</li>
+          <li>[x] pushBack(data) - adds an item at the end</li>
           <li>[ ] insert_at(index, value) - insert value at index, so current item at that index is pointed to by new item at index</li>
-          <li>[ ] pop_front() - remove front item and return its data</li>
-          <li>[ ] pop_back() - removes end item and returns its data</li>
+          <li>[x] popFront() - remove front item and return its data</li>
+          <li>[x] popBack() - removes end item and returns its data</li>
           <li>[ ] delete_at(index) - delete value at index </li>
-          <li>[ ] front() - get value of front item</li>
-          <li>[ ] back() - get value of end item</li>
+          <li>[x] front() - get value of front item</li>
+          <li>[x] back() - get value of end item</li>
           <li>[ ] reverse() - reverses the list</li>
         </ul>
       </li>

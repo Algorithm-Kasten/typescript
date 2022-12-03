@@ -496,12 +496,10 @@ The original credit goes to the [coding-interview-university](https://github.com
   <li><a href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/">GeeksforGeeks: Graph Data Structure</a></li>
   <li>4 basic ways to represent a graph in memory:</li>
   <ol>
-    <li>objects and pointers</li>
-    <li>adjacency matrix</li>
-    <li>adjacency list</li>
-    <li>adjacency map</li>
+    <li>[x] adjacency matrix</li>
+    <li>[x] adjacency list</li>
   </ol>
-  <li>Know pros & cons of each representation</li>
+  <li>[x] Know pros & cons of each representation</li>
   <li>BFS and DFS - know their computational complexity, their trade offs, and how to implement them in real code</li>
   <li>When asked a question, look for a graph-based solution first, then move on if none</li>
 </ul>

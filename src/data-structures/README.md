@@ -12,3 +12,6 @@
   - [Queue Linked List](./queue-linked-list/)
   - [Circular Queue](./circular-queue)
   - [Deque - Double Ended Queue](./double-ended-queue/)
+- Graph
+  - [Adjacency List](./adjacency-list/)
+  - [Adjacency Matrix](./adjacency-matrix/)

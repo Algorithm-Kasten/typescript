@@ -11,15 +11,19 @@ export class AdjacencyList {
         }
     }
 
-    addEdge(u: number, v: number) {
+    addEdge(u: number, v: number, undirected: boolean = true) {
         this.list[u].append(v);
-        this.list[v].append(u);
+        if (undirected) {
+            this.list[v].append(u);
+        }
     }
 
-    removeEdge(u: number, v: number) {
+    removeEdge(u: number, v: number, undirected: boolean = true) {
         if (this.list[u].size() > 0) {
             this.list[u].removeValue(v);
-            this.list[v].removeValue(u);
+            if (undirected) {
+                this.list[v].removeValue(u);
+            }
         }
     }
 

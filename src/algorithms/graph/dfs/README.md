@@ -5,7 +5,7 @@ For example, we have a tree-like graph like the below.
 
 ![tree dfs](./tree-dfs.png)
 
-When we perform DFS, it'll continue exploring the node until it hits a leaf node. Then it continues with the neighbor node as it comes back up. The order visited nodes will be `1 2 4 5 3`. This ordering is actually equivalent to [preorder traversal](../../tree/preorder/).
+When we perform DFS, it'll continue exploring the node until it hits a leaf node. Then it continues with the neighbor node as it comes back up. The order of visiting nodes will be `1 2 4 5 3`. This ordering is actually equivalent to [preorder traversal](../../tree/preorder/).
 
 ## DFS Pseudocode
 ```text

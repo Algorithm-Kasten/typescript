@@ -10,3 +10,4 @@
   - [is it symmetric tree?](./tree/isSymmetric/)
 - Graph
   - [Breadth First Search](./graph/bfs/)
+  - [Depth First Search](./graph/dfs/)

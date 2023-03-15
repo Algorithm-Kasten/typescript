@@ -2,13 +2,18 @@ export class QueueArray<T> {
   size: number; // total capacity
   front: number;
   rear: number;
-  queue: T[];
+  queue: (T | undefined)[];
 
   constructor(size: number) {
     this.size = size;
     this.front = 0;
     this.rear = 0;
     this.queue = new Array<T>(size);
+
+    if(Object.seal) {
+      this.queue.fill(undefined);
+      Object.seal(this);
+    }
   }
 
   full(): boolean {
@@ -21,17 +26,16 @@ export class QueueArray<T> {
 
   enqueue(val: T): void {
     if (this.full()) {
-      console.error('Queue is full');
-      return;
+      throw new Error('Queue is full');
     }
+
     this.queue[this.rear] = val;
     this.rear += 1;
   }
 
   dequeue(): T | undefined {
     if (this.empty()) {
-      console.error('Queue is empty');
-      return undefined;
+      throw new Error('Queue is empty');
     }
 
     let val = this.queue[this.front];
@@ -41,8 +45,7 @@ export class QueueArray<T> {
 
   getFront(): T | undefined {
     if (this.empty()) {
-      console.error('Queue is empty');
-      return undefined;
+      throw new Error('Queue is empty');
     }
 
     return this.queue[this.front];
@@ -50,8 +53,7 @@ export class QueueArray<T> {
 
   getRear(): T | undefined {
     if (this.empty()) {
-      console.error('Queue is empty');
-      return undefined;
+      throw new Error('Queue is empty');
     }
 
     return this.queue[this.rear - 1];

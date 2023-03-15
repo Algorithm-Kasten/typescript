@@ -1,12 +1,17 @@
 export class StackArray<T> {
   size: number; // total capacity
   top: number; // position
-  stack: T[];
+  stack: (T | undefined)[];
 
   constructor(size: number) {
     this.size = size;
     this.top = 0;
     this.stack = new Array<T>(size);
+
+    if(Object.seal) {
+      this.stack.fill(undefined);
+      Object.seal(this.stack);
+    }
   }
 
   full(): boolean {

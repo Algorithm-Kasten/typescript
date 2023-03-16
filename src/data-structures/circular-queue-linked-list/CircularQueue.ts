@@ -1,6 +1,6 @@
 import { ListNode, LinkedListNode } from '../linked-list/LinkedList';
 
-export class CircularQueue<T> {
+export class CircularQueueLinkedList<T> {
   front: ListNode<T>;
   rear: ListNode<T>;
 

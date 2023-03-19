@@ -10,7 +10,8 @@
 - Queue
   - [Queue Array](./queue-array/)
   - [Queue Linked List](./queue-linked-list/)
-  - [Circular Queue](./circular-queue)
+  - [Circular Queue Array](./circular-queue-array/)
+  - [Circular Queue Linked List](./circular-queue-linked-list/)
   - [Deque - Double Ended Queue](./double-ended-queue/)
 - Graph
   - [Adjacency List](./adjacency-list/)

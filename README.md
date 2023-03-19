@@ -43,8 +43,8 @@ The original credit goes to the [coding-interview-university](https://github.com
 <ul>
   <li>[ ] About Linked Lists:
     <ul>
-      <li>[ ] <a href="https://www.youtube.com/watch?v=HB7TcYklBHY">Singly Linked Lists Tutorial - What is a Linked List?</a></li>
-      <li>[ ] <a href="https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK">Singly Linked Lists (video)</a></li>
+      <li>[x] <a href="https://www.youtube.com/watch?v=HB7TcYklBHY">Singly Linked Lists Tutorial - What is a Linked List?</a></li>
+      <li>[x] <a href="https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK">Singly Linked Lists (video)</a></li>
       <li>[ ] <a href="https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0">CS 61B - Linked Lists 1 (video)</a></li>
       <li>[ ] <a href="https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w">CS 61B - Linked Lists 2 (video)</a></li>
       <li>[ ] <a href="https://www.youtube.com/watch?v=QN6FPiD0Gzo">C code (video)</a> - just portions about Node struct and *memory allocation*.</li>

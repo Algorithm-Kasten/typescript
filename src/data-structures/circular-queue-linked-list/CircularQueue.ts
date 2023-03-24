@@ -62,10 +62,10 @@ export class CircularQueueLinkedList<T> {
     let curr: ListNode<T> = this.front;
     if (this.front) {
       while (curr && curr !== this.rear) {
-        console.log(curr.value);
+        console.log(curr.item);
         curr = curr.next;
       }
     }
-    if (curr) console.log(curr.value);
+    if (curr) console.log(curr.item);
   }
 }

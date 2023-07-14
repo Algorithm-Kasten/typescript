@@ -9,16 +9,16 @@ The simplest form of the element in a linked list called node, composes of data 
 ### Access
 
 ```text
-getNode(head, i) → Node | ø
+getNode(head, i) -> Node | NULL
     Pre: head is the 1st node in the list
          i is a 1-based index of the node in the list we're trying to get
     Post: ith node is returned from the list
 
-    curr ← head
-    i    ← 1
+    curr = head
+    i    = 1
 
     WHILE (i < pos)
-      curr ← curr.next
+      curr = curr.next
     END WHILE
 
     return current
@@ -28,103 +28,104 @@ END getNode
 ### Search
 
 ```text
-def search(head, value) → Node | ø
+def search(head, value) -> Node | NULL
     Pre: head is the 1st node in the list
          value is the value to search for
-    Post: returns a node with the value; othewrise return ø (null)
+    Post: returns a node with the value; othewrise return NULL (null)
 
-    current ← head
+    current = head
 
     WHILE (current)
         IF (current.value == value)
             return current
         END IF
 
-        current ← current.next
+        current = current.next
     END WHILE
 
-    return ø
+    return NULL
 END search
 ```
 
-### prepend
+### pushFront
 
 ```text
-prepend(head, value) → void
+def pushFront(head, value) -> void
     Pre: head is the 1st node in the list
          value is the value we're going to insert
     Post: a new node has been inserted at the head of the list
 
-    n ← Node(value)
+    n = Node(value)
 
-    IF (this.head == ø)
-        this.head ← n
+    IF (haed == NULL)
+        haed = n
     ELSE
-        n.next ← head
-        head   ← n
+        n.next = head
+        head   = n
     END IF
-end prepend
+end pushFront
 ```
 
-### append
+### pushBack
 
 ```text
-append(head, value)
-    Pre: head is the 1st node in the list
+def pushBack(tail, value)
+    Pre: tail is the last node in the list
          value is the value we're going to insert in the list
     Post: a new node has been inserted at the end of the list
 
-    n ← Node(value)
+    new_node = Node(value)
 
-    IF (this.head == ø)
-        this.head ← n
+    IF (tail == NULL)
+        head = new_node
+        tail = new_node
+        head.next = tail
     ELSE
-        current ← this.head
-        WHILE (current.next)
-            current ← current.next
-        END
-
-        current.next ← n
+        tail.next = new_node
+        new_node = tail
     END IF
-END append
+END pushBack
 ```
 
-### delete
+### popFront
 
 ```text
-delete(head, value) → Node | ø
+def popFront(head)
     Pre: head is the 1st node in the list
-         value is the value we're going to remove from the list
-    Post: a node has been removed from the list and returned; otherwise, return ø (null)
+    Post: the first node has been removed from the list
 
-    IF (head == ø)
-        return ø
-    ELSE IF (head == value)
-        deletedNode ← head
-        head        ← head.next
-        return deletedNode
-    END
+    curr = head
+    head = head.next
+    curr = NULL
+END popFront
+```
 
-    current ← head
-    WHILE (current.next)
-        IF (current.next.value == value)
-            deletedNode  ← current.next
-            current.next ← current.next.next
-            return deletedNode
-        END
-    END
+### popBack
 
-    return ø
-END delete
+```text
+def popBack(head, tail)
+    Pre: head is the first node in the list,
+         tail is the last node in the list
+    Post: the last node has been removed from the list
+
+    curr = head
+
+    WHILE curr && curr.next != tail
+        curr = curr.next
+    END WHILE
+
+    curr.next = NULL
+    tail = curr
+END popBack
 ```
 
 ## Complexities
 
 ### Time Complexity
 
-| Access | Search | Insertion | Deletion |
-| :----: | :----: | :-------: | :------: |
-|  O(n)  |  O(n)  |   Acess time + O(1)    |  Acess time + O(1)   |
+| Access | Search |     Insertion     |     Deletion      |
+| :----: | :----: | :---------------: | :---------------: |
+|  O(n)  |  O(n)  | Acess time + O(1) | Acess time + O(1) |
 
 ### Space Complexity
 

@@ -8,7 +8,7 @@ export class StackArray<T> {
     this.top = 0;
     this.stack = new Array<T>(size);
 
-    if(Object.seal) {
+    if (Object.seal) {
       this.stack.fill(undefined);
       Object.seal(this.stack);
     }
@@ -24,7 +24,7 @@ export class StackArray<T> {
 
   push(val: T): void {
     if (this.full()) {
-      console.error('Stack is full');
+      console.error("Stack is full");
       return;
     }
     this.stack[this.top] = val;
@@ -33,7 +33,7 @@ export class StackArray<T> {
 
   pop(): T | undefined {
     if (this.empty()) {
-      console.error('Stack is empty');
+      console.error("Stack is empty");
       return undefined;
     }
 
@@ -44,7 +44,7 @@ export class StackArray<T> {
 
   peek(): T | undefined {
     if (this.empty()) {
-      console.error('Stack is empty');
+      console.error("Stack is empty");
       return undefined;
     }
 

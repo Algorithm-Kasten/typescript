@@ -23,7 +23,7 @@ export class SinglyLinkedList<T> implements ILinkedList<T> {
   private tail: NodeType<T> = null;
 
   /* O(1) */
-  size() {
+  size(): number {
     return this.length;
   }
 
@@ -120,6 +120,23 @@ export class SinglyLinkedList<T> implements ILinkedList<T> {
     return null;
   }
 
+  /* O(n), n = number of nodes */
+  getNode(index: number): NodeType<T> {
+    if (index < 0 || index >= this.size()) return null;
+    if (index === 0) return this.head;
+    if (index === this.size() - 1) return this.tail;
+
+    let curr = this.head;
+    let pos = 1;
+
+    while (curr && pos < index) {
+      curr = curr.next;
+      pos += 1;
+    }
+
+    return curr;
+  }
+
   /* O(n), n = number of nodes*/
   reverse() {
     let curr = this.head;
@@ -157,6 +174,19 @@ export class SinglyLinkedList<T> implements ILinkedList<T> {
       curr.next = newNode;
       this.length += 1;
     }
+  }
+
+  /* O(n), n = number of nodes */
+  search(value: T): NodeType<T> {
+    if (this.isEmpty()) return null;
+
+    let curr = this.head;
+    while (curr) {
+      if (curr.value === value) return curr;
+      curr = curr.next;
+    }
+
+    return null;
   }
 
   /* O(n), n = number of nodes */

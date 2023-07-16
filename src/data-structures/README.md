@@ -1,18 +1,18 @@
 # Data Structures
 
 - Linked List
-  - [Singly Linked List](./linked-list/)
-  - [Doubly Linked List](./doubly-linked-list/)
-  - [Circular Linked List](./circular-linked-list/)
+  - [Singly Linked List](./singly-linked-list/)
+  - Doubly Linked List
+  - Circular Linked List
 - Stack
-  - [Stack Array](./stack-array/)
-  - [Stack Linked List](./stack-linked-list/)
+  - Stack - Array
+  - [Stack - Linked List](./stack-linked-list/)
 - Queue
-  - [Queue Array](./queue-array/)
-  - [Queue Linked List](./queue-linked-list/)
-  - [Circular Queue Array](./circular-queue-array/)
-  - [Circular Queue Linked List](./circular-queue-linked-list/)
-  - [Deque - Double Ended Queue](./double-ended-queue/)
+  - Queue Array
+  - Queue Linked List
+  - Circular Queue Array
+  - Circular Queue Linked List
+  - Deque - Double Ended Queue
 - Graph
-  - [Adjacency List](./adjacency-list/)
-  - [Adjacency Matrix](./adjacency-matrix/)
+  - Adjacency List
+  - Adjacency Matrix

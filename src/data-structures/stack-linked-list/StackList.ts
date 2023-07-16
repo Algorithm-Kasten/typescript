@@ -1,41 +1,57 @@
-import { ListNode, LinkedListNode } from '../linked-list/LinkedList';
+import { Node, NodeType } from "../Node/Node";
 
-export class StackList<T> {
-  top: ListNode<T>;
+interface IStack<T> {
+  top(): T | null;
+  isEmpty(): boolean;
+  push(data: T): void;
+  pop(): NodeType<T>;
+}
 
-  constructor(value: T | null = null) {
-    if (value) {
-      this.top = new LinkedListNode(value);
-    } else {
-      this.top = null;
+export class Stack<T> implements IStack<T> {
+  private topNode: NodeType<T> = null;
+  private size = 0;
+
+  /* O(1) */
+  top(): T | null {
+    if (this.topNode) return this.topNode.value;
+
+    return null;
+  }
+
+  /* O(1) */
+  isEmpty(): boolean {
+    return this.size === 0;
+  }
+
+  /* O(1) */
+  push(data: T) {
+    const newNode = new Node(data);
+    newNode.next = this.topNode;
+    this.topNode = newNode;
+    this.size += 1;
+  }
+
+  /* O(1) */
+  pop(): NodeType<T> {
+    if (this.isEmpty()) return null;
+
+    let removedNode: NodeType<T> = null;
+    if (this.topNode) {
+      removedNode = this.topNode;
+      this.topNode = this.topNode.next;
     }
+
+    this.size -= 1;
+    return removedNode;
   }
 
-  empty(): boolean {
-    return this.top === null;
-  }
+  /* O(n), n = number of data in stack */
+  printAll() {
+    let curr = this.topNode;
 
-  push(value: T): void {
-    let newNode = new LinkedListNode(value);
-    newNode.next = this.top;
-    this.top = newNode;
-  }
-
-  pop(): ListNode<T> {
-    let poppedNode = this.top;
-
-    if (this.top) {
-      this.top = this.top.next;
-    }
-
-    return poppedNode;
-  }
-
-  peek(): ListNode<T> {
-    if (this.top) {
-      return this.top;
-    } else {
-      return null;
+    while (curr) {
+      process.stdout.write(`${curr.value} `);
+      curr = curr.next;
     }
   }
 }

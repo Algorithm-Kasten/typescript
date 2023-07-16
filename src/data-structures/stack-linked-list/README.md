@@ -4,7 +4,7 @@ Stack is a linear data structure that follows a particular order (Last-In, Last-
 
 <a href="https://www.programiz.com/dsa/stack"><img src="https://cdn.programiz.com/sites/tutorial2program/files/stack.png" title="programiz.com" alt="Stack Operations" /></a>
 
-|      | push | pop  | peek | empty |
+|      | push | pop  | top  | empty |
 | :--: | :--: | :--: | :--: | :---: |
 | Time | O(1) | O(1) | O(1) | O(1)  |
 
@@ -13,57 +13,56 @@ Stack is a linear data structure that follows a particular order (Last-In, Last-
 ### push
 
 ```text
-push(top, value) → void
-    Pre: top is the top node of the stack
-         value is the value we're going to push it to the stack
+push(top, value) -> void
+    Pre: top represents the top node in the stack.
+         value is the value we're going to push it to the stack.
     Post: new data is pushed to the stack
 
-    n      ← new Node(value)
-    n.next ← top
-    top    ← n
+    n      = new Node(value)
+    n.next = top
+    top    = n
 END
 ```
 
 ### pop
 
 ```text
-pop(top) → Node | null
-    Pre: top is the top node of the stack
-    Post: removes the top node from the stack; returns ø if failed
+pop(top) -> Node | null
+    Pre: top represents the top node in the stack.
+    Post: removes the top node from the stack; returns NULL if failed.
 
-    n   ← top
-
-    IF (top && top.next)
-        top ← top.next
+    n   = top
+    IF (top)
+        top = top.next
     END IF
 
     return n
 END
 ```
 
-### peek
+### top
 
 ```text
-peek(top) → Node | ø
-    Pre: top is the top node on the stack;
-    Post: returns the top node on the stack; returns ø if stack is empty;
+top(topNode) -> Node | NULL
+    Pre: topNode is the top node in the stack.
+    Post: returns the top node on the stack; returns NULL if stack is empty.
 
     IF (top)
         return top.value
-    ELSE
-        return ø
-    END
+    END IF
+
+    return NULL
 END
 ```
 
 ### empty
 
 ```text
-empty(top) → boolean
-    Pre: top is the top node on the stack;
-    Post: returns true if stack is empty; otherwise false;
+empty(top) -> boolean
+    Pre: top represents the top node in the stack.
+    Post: returns true if stack is empty; otherwise false.
 
-    return top == ø
+    return top == NULL
 END
 ```
 

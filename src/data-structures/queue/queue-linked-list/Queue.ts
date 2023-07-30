@@ -1,4 +1,4 @@
-import { Node, NodeType } from "../Node/Node";
+import { Node, NodeType } from "../linked-list/Node/Node";
 
 interface IQueue<T> {
   getFront(): NodeType<T>;

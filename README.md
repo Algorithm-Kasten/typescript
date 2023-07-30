@@ -8,16 +8,14 @@ A data structure is an organized collection of data that is designed to be acces
 
 - [Singly Linked List](./src/data-structures/singly-linked-list)
 - [Doubly Linked List](./src/data-structures/doubly-linked-list/)
-- [Circular Linked List](./src/data-structures/circular-linked-list/)
 - Stack
   - [Array Implementation](./src/data-structures/stack-array)
   - [Linked List Implementation](./src/data-structures/stack-linked-list)
 - Queue
   - [Array Implementation](./src/data-structures/queue-array)
   - [Linked List Implementation](./src/data-structures/queue-linked-list/)
-- Circular Queue
-  - [Array Implementation](./src/data-structures/circular-queue-array/)
-  - [Linked List Implementation](./src/data-structures/circular-linked-list/)
+- Tree
+  - [Simple Tree](./src/data-structures/tree/simple-tree/)
   <!--
 - [ ] 우선순위 큐 (Priority Queue)
 - [ ] 트리 (Tree)

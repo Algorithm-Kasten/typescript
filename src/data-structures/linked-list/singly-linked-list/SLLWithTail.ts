@@ -1,6 +1,6 @@
 /* Singly Linked List without using a tail poniter */
 
-import { Node, NodeType } from "../Node/Node";
+import { Node, NodeType } from "../../node/list-node/Node";
 
 interface ILinkedList<T> {
   size(): number;

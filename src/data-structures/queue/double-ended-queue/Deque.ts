@@ -1,7 +1,7 @@
 import {
   ListNode,
   DoublyLinkedListNode,
-} from '../doubly-linked-list/DoublyLinkedList';
+} from '../../linked-list/doubly-linked-list/DoublyLinkedList';
 
 export class Deque<T> {
   front: ListNode<T>;

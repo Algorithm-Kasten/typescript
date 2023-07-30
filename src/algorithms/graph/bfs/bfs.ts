@@ -1,4 +1,4 @@
-import { AdjacencyList } from "../../../data-structures/adjacency-list/AdjacencyList";
+import { AdjacencyList } from "../../../data-structures/graph/adjacency-list/AdjacencyList";
 
 const bfs = (startingNode: number): void => {
     let q: number[] = [startingNode];

@@ -1,18 +1,21 @@
 # Data Structures
 
 - Linked List
-  - [Singly Linked List](./singly-linked-list/)
+  - [Singly Linked List](./linked-list/singly-linked-list/)
   - Doubly Linked List
   - Circular Linked List
 - Stack
   - Stack - Array
-  - [Stack - Linked List](./stack-linked-list/)
+  - [Stack - Linked List](./stack/stack-linked-list/)
 - Queue
-  - [Queue Array](./queue-array/)
-  - [Queue Linked List](./queue-linked-list/)
+  - [Queue Array](./queue/queue-array/)
+  - [Queue Linked List](./queue/queue-linked-list/)
   - Circular Queue Array
   - Circular Queue Linked List
   - Deque - Double Ended Queue
+- Tree
+  - [Simple Tree](./tree/simple-tree/)
+  - Binary Search Tree
 - Graph
   - Adjacency List
   - Adjacency Matrix

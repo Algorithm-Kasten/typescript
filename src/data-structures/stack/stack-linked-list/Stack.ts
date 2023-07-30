@@ -1,4 +1,4 @@
-import { Node, NodeType } from "../Node/Node";
+import { Node, NodeType } from "../../node/list-node/Node";
 
 interface IStack<T> {
   top(): T | null;

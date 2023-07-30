@@ -19,7 +19,7 @@ export class Queue<T> implements IQueue<T> {
 
     if (Object.seal) {
       this.queue.fill(undefined);
-      Object.seal(this);
+      Object.seal(this.queue);
     }
   }
 
@@ -78,3 +78,10 @@ export class Queue<T> implements IQueue<T> {
     console.log();
   }
 }
+
+const q = new Queue<number>(4);
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.enqueue(4)
+q.printAll()

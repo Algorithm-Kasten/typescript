@@ -1,61 +1,80 @@
-export class QueueArray<T> {
-  size: number; // total capacity
-  front: number;
-  rear: number;
-  queue: (T | undefined)[];
+interface IQueue<T> {
+  getFront(): T | undefined;
+  getRear(): T | undefined;
+  isEmpty(): boolean;
+  isFull(): boolean;
+  enqueue(data: T): void;
+  dequeue(): T | undefined;
+}
 
-  constructor(size: number) {
-    this.size = size;
-    this.front = 0;
-    this.rear = 0;
-    this.queue = new Array<T>(size);
+export class Queue<T> implements IQueue<T> {
+  private queue: (T | undefined)[];
+  private front = 0;
+  private rear = 0;
+  public capacity: number;
 
-    if(Object.seal) {
+  constructor(cap: number = 8) {
+    this.capacity = cap;
+    this.queue = new Array<T>(cap);
+
+    if (Object.seal) {
       this.queue.fill(undefined);
       Object.seal(this);
     }
   }
 
-  full(): boolean {
-    return this.size === this.rear;
-  }
-
-  empty(): boolean {
-    return this.front === this.rear;
-  }
-
-  enqueue(val: T): void {
-    if (this.full()) {
-      throw new Error('Queue is full');
-    }
-
-    this.queue[this.rear] = val;
-    this.rear += 1;
-  }
-
-  dequeue(): T | undefined {
-    if (this.empty()) {
-      throw new Error('Queue is empty');
-    }
-
-    let val = this.queue[this.front];
-    this.front += 1;
-    return val;
-  }
-
-  getFront(): T | undefined {
-    if (this.empty()) {
-      throw new Error('Queue is empty');
+  /* O(1) */
+  getFront() {
+    if (this.isEmpty()) {
+      throw new Error("Queue is empty.");
     }
 
     return this.queue[this.front];
   }
 
-  getRear(): T | undefined {
-    if (this.empty()) {
-      throw new Error('Queue is empty');
+  getRear() {
+    if (this.isEmpty()) {
+      throw new Error("Queue is empty.");
+    }
+    return this.queue[this.rear - 1];
+  }
+
+  isEmpty() {
+    return this.front === this.rear;
+  }
+
+  isFull() {
+    return this.capacity === this.rear;
+  }
+
+  /* O(1) */
+  enqueue(data: T) {
+    if (this.isFull()) {
+      throw new Error("Queue is full.");
     }
 
-    return this.queue[this.rear - 1];
+    this.queue[this.rear] = data;
+    this.rear += 1;
+  }
+
+  /* O(1) */
+  dequeue() {
+    if (this.isEmpty()) {
+      throw new Error("Queue is empty.");
+    }
+
+    let data = this.queue[this.front];
+    this.front += 1;
+    return data;
+  }
+
+  /* O(n), n = number of data in Queue */
+  printAll() {
+    let i = this.front;
+    while (i < this.rear) {
+      process.stdout.write(`${this.queue[i]} `);
+      i += 1;
+    }
+    console.log();
   }
 }

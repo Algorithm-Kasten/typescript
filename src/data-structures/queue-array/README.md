@@ -15,27 +15,27 @@ In programming, the term **enqueue** refers to adding an item to the queue and *
 ### enqueue
 
 ```text
-push(queue<T>, front, rear, value) → void
+push(queue<T>, front, rear, value) -> void
     Pre: queue is the queue array
          rear index tracks the most recently added element (last element in queue array)
          front index tracks the first element
          value is the value we're going to enqueue
     Post: new element is added to the queue
 
-    queue[rear++] ← value
+    queue[rear++] = value
 END
 ```
 
 ### dequeue
 
 ```text
-dequeue(queue<T>, front, rear) → T
+dequeue(queue<T>, front, rear) -> T
     Pre: queue is the queue array
          rear index tracks the most recently added element (last element in queue array)
          front index tracks the first element
     Post: front element has been removed from the queue
 
-    elem ← queue[front++];
+    elem = queue[front++];
     return elem
 END
 ```
@@ -43,7 +43,7 @@ END
 ### empty
 
 ```text
-empty(queue<T>, front, rear) → boolean
+empty(queue<T>, front, rear) -> boolean
     Pre: queue is the queue array
          rear index tracks the most recently added element (last element in queue array)
          front index tracks the first element
@@ -56,7 +56,7 @@ END
 ### full
 
 ```text
-full(queue<T>, size, rear) → boolean
+full(queue<T>, size, rear) -> boolean
     Pre: queue is the queue array
          size is the array size
          rear index tracks the most recently added element (last element in queue array)

@@ -8,8 +8,8 @@
   - Stack - Array
   - [Stack - Linked List](./stack-linked-list/)
 - Queue
-  - Queue Array
-  - Queue Linked List
+  - [Queue Array](./queue-array/)
+  - [Queue Linked List](./queue-linked-list/)
   - Circular Queue Array
   - Circular Queue Linked List
   - Deque - Double Ended Queue

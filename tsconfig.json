@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "types": [
+        // ... other types
+        "jest"
+      ]
+      // ..other settings
+    },
+    "include": [
+        "src/**/*",
+        "**/*.test.ts"
+    ],
+  }

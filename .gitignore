@@ -59,4 +59,5 @@ main
 node_modules/
 
 # compile javascript code
+src/*.js
 src/**/*.js

@@ -15,7 +15,7 @@
   - Deque - Double Ended Queue
 - Tree
   - [Simple Tree](./tree/simple-tree/)
-  - Binary Search Tree
+  - [Binary Search Tree](./tree/binary-search-tree/)
 - Graph
   - Adjacency List
   - Adjacency Matrix

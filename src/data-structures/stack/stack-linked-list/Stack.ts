@@ -34,7 +34,6 @@ export class Stack<T> implements IStack<T> {
   /* O(1) */
   pop(): NodeType<T> {
     if (this.isEmpty()) return null;
-
     let removedNode: NodeType<T> = null;
     if (this.topNode) {
       removedNode = this.topNode;

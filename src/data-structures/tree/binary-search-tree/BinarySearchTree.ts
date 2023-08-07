@@ -1,74 +1,38 @@
-type BSTNode<T> = BinarySearchTreeNode<T> | null | undefined;
-
-export class BinarySearchTreeNode<T> {
-  value: T;
-  left: BSTNode<T>;
-  right: BSTNode<T>;
-
-  /**
-   *
-   * @param value T
-   * @param left BinarySearchTreeNode<T> | null | undefined;
-   * @param right BinarySearchTreeNode<T> | null | undefined;
-   */
-  constructor(value: T, left: BSTNode<T> = null, right: BSTNode<T> = null) {
-    this.value = value;
-    this.left = left;
-    this.right = right;
-  }
-}
+import { TreeNode, TreeNodeType } from "../../node/tree-node/TreeNode";
 
 export class BST<T> {
-  root: BSTNode<T>;
+  private root: TreeNodeType<T>;
 
-  /**
-   * @param value T | null
-   */
   constructor(value: T | null = null) {
     if (null === value) this.root = null;
-    else this.root = new BinarySearchTreeNode<T>(value);
+    else this.root = new TreeNode<T>(value);
   }
 
-  /**
-   * @param value
-   */
   insert(value: T): void {
     this.root = this.insertHelper(value, this.root);
   }
 
-  /**
-   *
-   * @param value T
-   * @param node BinarySearchTreeNode<T> | null | undefined;
-   * @returns BinarySearchTreeNode<T> | null | undefined;
-   */
-  private insertHelper(value: T, node: BSTNode<T> = this.root): BSTNode<T> {
+  private insertHelper(value: T, node: TreeNodeType<T> = this.root): TreeNode<T> {
     if (null === node) {
-      return new BinarySearchTreeNode<T>(value);
+      return new TreeNode<T>(value);
     }
 
-    if (node && value < node.value) {
+    if (node && value < node.data) {
       node.left = this.insertHelper(value, node.left);
-    } else if (node && value >= node.value) {
+    } else if (node && value >= node.data) {
       node.right = this.insertHelper(value, node.right);
     }
 
     return node;
   }
 
-  /**
-   *
-   * @param value T
-   * @param node BinarySearchTreeNode<T> | null | undefined;
-   * @returns boolean
-   */
-  search(value: T, node: BSTNode<T> = this.root): boolean {
+  search(value: T, node: TreeNode<T> = this.root): boolean {
     if (!node) {
       return false;
     } else {
-      if (value === node.value) return true;
+      if (value === node.data) return true;
 
-      if (value < node.value) {
+      if (value < node.data) {
         return this.search(value, node.left);
       } else {
         return this.search(value, node.right);
@@ -76,35 +40,79 @@ export class BST<T> {
     }
   }
 
-  /**
-   * @param node BinarySearchTreeNode<T> | null | undefined;
-   */
-  preorder(node: BSTNode<T> = this.root) {
+  preorder(node: TreeNodeType<T> = this.root) {
     if (null === node) return;
-    console.log(node?.value);
-    this.preorder(node?.left);
-    this.preorder(node?.right);
+    
+    process.stdout.write(`${node.data} `);
+    this.preorder(node.left);
+    this.preorder(node.right);
+    if(node === this.root) console.log();
   }
 
-  /**
-   * @param node BinarySearchTreeNode<T> | null | undefined;
-   */
-  inorder(node: BSTNode<T> = this.root) {
+  inorder(node: TreeNodeType<T> = this.root) {
     if (null === node) return;
-
-    this.inorder(node?.left);
-    console.log(node?.value);
-    this.inorder(node?.right);
+    
+    this.inorder(node.left);
+    process.stdout.write(`${node.data} `);
+    this.inorder(node.right);
+    if(node === this.root) console.log();
   }
 
-  /**
-   * @param node BinarySearchTreeNode<T> | null | undefined;
-   */
-  postorder(node: BSTNode<T> = this.root) {
+  postorder(node: TreeNodeType<T> = this.root) {
     if (null === node) return;
+    
+    this.postorder(node.left);
+    this.postorder(node.right);
+    process.stdout.write(`${node.data} `);
+    if(node === this.root) console.log();
+  }
 
-    this.postorder(node?.left);
-    this.postorder(node?.right);
-    console.log(node?.value);
+  bfs(): void {
+    let q = [this.root];
+
+    while(q.length > 0) {
+      let curr = q.shift();
+
+      process.stdout.write(`${curr.data} `)
+
+      if(curr.left) q.push(curr.left);
+      if(curr.right) q.push(curr.right);
+    }
+    console.log();
+  }
+
+  getMin(): T | undefined {
+    if(!this.root) return undefined;
+
+    let curr = this.root;
+    while(curr && curr.left) {
+      curr = curr.left;
+    }
+
+    return curr.data
+  }
+
+  getMax(): T | undefined {
+    if(!this.root) return undefined;
+
+    let curr = this.root;
+    while(curr && curr.right) {
+      curr = curr.right;
+    }
+
+    return curr.data
+  }
+
+  existInTree(value: T): boolean {
+    if(!this.root) return false;
+    
+    let curr = this.root;
+    while(curr) {
+      if(curr.data === value) return true;
+      else if(curr.data > value) curr = curr.left;
+      else curr = curr.right;
+    }
+
+    return false;
   }
 }

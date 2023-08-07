@@ -1,4 +1,4 @@
-import { TreeNode, TreeNodeType } from "../tree-node/TreeNode";
+import { TreeNode, TreeNodeType } from "../../node/tree-node/TreeNode";
 
 export class Tree<T> {
     private root: TreeNodeType<T>;

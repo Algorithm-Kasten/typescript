@@ -6,16 +6,18 @@ This repository contains TypeScript based examples of many popular algorithms an
 
 A data structure is an organized collection of data that is designed to be accessed and modified efficiently through specific operations.
 
-- [Singly Linked List](./src/data-structures/singly-linked-list)
-- [Doubly Linked List](./src/data-structures/doubly-linked-list/)
+- Linked List
+  - [Singly Linked List](./src/data-structures/linked-list/singly-linked-list/)
 - Stack
-  - [Array Implementation](./src/data-structures/stack-array)
-  - [Linked List Implementation](./src/data-structures/stack-linked-list)
+  - [Array Implementation](./src/data-structures/stack/stack-array/)
+  - [Linked List Implementation](./src/data-structures/stack/stack-linked-list/)
 - Queue
-  - [Array Implementation](./src/data-structures/queue-array)
-  - [Linked List Implementation](./src/data-structures/queue-linked-list/)
+  - [Array Implementation](./src/data-structures/queue/queue-array/)
+  - [Linked List Implementation](./src/data-structures/queue/queue-linked-list/)
 - Tree
   - [Simple Tree](./src/data-structures/tree/simple-tree/)
+  - [Binary Search Tree](./src/data-structures/tree/binary-search-tree/)
+
   <!--
 - [ ] 우선순위 큐 (Priority Queue)
 - [ ] 트리 (Tree)

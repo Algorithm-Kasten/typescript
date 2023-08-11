@@ -11,21 +11,21 @@ A drawback of doubly linked list is that it consumes more memory because of the 
 ### prepend
 
 ```text
-prepend(head, tail, value) → void
+prepend(head, tail, value) -> void
     Pre: head is the 1st node in the list
          tail is the last node in the list
          value is the value we're going to insert
     Post: a new node has been inserted at the head of the list
 
-    n ← Node(value)
+    n = Node(value)
 
-    IF (head == ø)
-        head ← n
-        tail ← n
+    IF (head == NULL)
+        head = n
+        tail = n
     ELSE
-        n.next    ← head
-        head.prev ← n
-        head      ← n
+        n.next    = head
+        head.prev = n
+        head      = n
     END IF
 END prepend
 ```
@@ -33,21 +33,21 @@ END prepend
 ### append
 
 ```text
-append(head, tail, value) → void
+append(head, tail, value) -> void
     Pre: head is the 1st node in the list
          tail is the last node in the list
          value is the value we're going to insert in the list
     Post: a new node has been inserted at the end of the list
 
-    n ← Node(value)
+    n = Node(value)
 
-    IF (tail == ø)
-        tail ← n
-        head ← n
+    IF (tail == NULL)
+        tail = n
+        head = n
     ELSE
-        n.prev    ← tail
-        tail.next ← n
-        tail 　　　← n
+        n.prev    = tail
+        tail.next = n
+        tail 　　　= n
     END IF
 END append
 ```
@@ -55,22 +55,22 @@ END append
 ### deleteHead
 
 ```text
-deleteHead(head, tail, del) → Node
+deleteHead(head, tail, del) -> Node
     Pre: head is the first node in the list
          tail is the last node in the list
          del stores a node to be deleted
     Post: head has been replaced
 
-    del ← ø
+    del = NULL
 
     IF (head == tail)
-        del  ← head
-        head ← ø
-        tail ← ø
-    ELSE IF (head != ø)
-        del       ← head
-        head      ← head.next
-        head.prev ← ø
+        del  = head
+        head = NULL
+        tail = NULL
+    ELSE IF (head != NULL)
+        del       = head
+        head      = head.next
+        head.prev = NULL
     END IF
 
     return del
@@ -80,22 +80,22 @@ END
 ### deleteTail
 
 ```text
-deleteTail(head, tail, del) → Node
+deleteTail(head, tail, del) -> Node
     Pre: head is the first node in the list
          tail is the last node in the list
          del stores a node to be deleted
     Post: tail has been replaced
 
-    del ← ø
+    del = NULL
 
     IF (tail == head)
-        del  ← tail
-        head ← ø
-        tail ← ø
-    ELSE IF (tail != ø)
-        del       ← head
-        tail      ← tail.prev
-        tail.next ← ø
+        del  = tail
+        head = NULL
+        tail = NULL
+    ELSE IF (tail != NULL)
+        del       = head
+        tail      = tail.prev
+        tail.next = NULL
     END IF
 
     return del
@@ -105,29 +105,29 @@ END
 ### delete
 
 ```text
-delete(head, tail, value) → Node | ø
+delete(head, tail, value) -> Node | NULL
     Pre: head is the 1st node in the list
          tail is the last node in the list
          value is the value we're going to remove from the list
-    Post: a node is removed from the list and returned; otherwise, return ø
+    Post: a node is removed from the list and returned; otherwise, return NULL
 
-    // FIND returns the node with a given value or ø
-    deletedNode ← find(value)
+    // FIND returns the node with a given value or NULL
+    deletedNode = find(value)
 
     IF (deletedNode)
         IF (deletedNode.prev && deletedNode.next)
-            deletedNode.prev.next ← deletedNode.next;
-            deletedNode.next.prev ← deletedNode.prev;
+            deletedNode.prev.next = deletedNode.next;
+            deletedNode.next.prev = deletedNode.prev;
             return deletedNode;
         ELSE IF (deletedNode == head && deletedNode == tail)
-            head ← ø
-            tail ← ø
+            head = NULL
+            tail = NULL
         ELSE IF (deletedNode == head)
-            head       ← head.next
-            head?.prev ← ø
+            head       = head.next
+            head?.prev = NULL
         ELSE IF (deletedNode == tail)
-            tail       ← tail.prev
-            tail?.next ← ø
+            tail       = tail.prev
+            tail?.next = NULL
         END IF
     END IF
 
@@ -142,10 +142,10 @@ reverseTraversal(tail)
     Pre: tail points to the last node in the list
     Post: a list has been traversed in reverse order
 
-    n ← tail
-    WHILE (n != ø)
+    n = tail
+    WHILE (n != NULL)
         print n.value
-        n ← n.prev
+        n = n.prev
     END WHILE
 END reverseTraversal
 ```

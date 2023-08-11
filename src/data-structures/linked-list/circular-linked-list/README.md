@@ -11,19 +11,19 @@ The basic structure of the node is same as a singly linked list (unless one impl
 ### pushFront
 
 ```text
-pushFront(last, value) → void
+pushFront(last, value) -> void
     Pre: last is the last node in the list
          value is the value we're going to insert
     Post: a new node has been inserted at the head of the list
 
-    n ← Node(value)
+    n = Node(value)
 
-    IF (last == ø)
-        last      ← n
-        last.next ← last
+    IF (last == NULL)
+        last      = n
+        last.next = last
     ELSE
-        n.next    ← last.next
-        last.next ← n
+        n.next    = last.next
+        last.next = n
     END IF
 end pushFront
 ```
@@ -31,20 +31,20 @@ end pushFront
 ### pushBack
 
 ```text
-pushBack(last, value) → void
+pushBack(last, value) -> void
     Pre: last is the last node in the list
          value is the value we're going to insert
     Post: a new node has been inserted at the back of the list
 
-    n ← Node(value)
+    n = Node(value)
 
-    IF (last == ø)
-        last      ← n
-        last.next ← last
+    IF (last == NULL)
+        last      = n
+        last.next = last
     ELSE
-        n.next    ← last.next
-        last.next ← n
-        last      ← last.next
+        n.next    = last.next
+        last.next = n
+        last      = last.next
     END IF
 end pushBack
 ```
@@ -52,12 +52,12 @@ end pushBack
 ### popFront
 
 ```text
-popFront(last) → Node | ø
+popFront(last) -> Node | NULL
     Pre: last is the last node in the list
     Post: a first node has been removed from the list
 
-    del       ← last.next
-    last.next ← del.next
+    del       = last.next
+    last.next = del.next
 
     return del
 end popFront
@@ -66,17 +66,17 @@ end popFront
 ### pop_back
 
 ```text
-popBack(last) → Node | ø
+popBack(last) -> Node | NULL
     Pre: last is the last node in the list
     Post: a last node has been removed from the list
 
-    curr ← last.next;
+    curr = last.next;
     WHILE (curr.next != last)
-        curr ← curr.next
+        curr = curr.next
     END WHILE
 
-    curr.next ← last.next
-    last      ← curr
+    curr.next = last.next
+    last      = curr
 
     return curr
 end popBack
@@ -85,7 +85,7 @@ end popBack
 ### front
 
 ```text
-front(last) → Node | ø
+front(last) -> Node | NULL
     Pre: last is the last node in the list
     Post: first node of the list is returned
 
@@ -96,7 +96,7 @@ end front
 ### back
 
 ```text
-back(last) → Node | ø
+back(last) -> Node | NULL
     Pre: last is the last node in the list
     Post: last node of the list is returned
 

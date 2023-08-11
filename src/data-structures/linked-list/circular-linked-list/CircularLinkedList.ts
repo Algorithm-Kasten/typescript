@@ -1,39 +1,28 @@
-export type ListNode<T> = CircularListNode<T> | null;
+import { Node, NodeType } from "../../node/list-node/Node";
 
-export class CircularListNode<T> {
-  readonly value: T;
-  next: ListNode<T>;
-
-  /**
-   * @param value - readonly T
-   * @param next
-   */
-  constructor(value: T, next: ListNode<T> = null) {
-    this.value = value;
-    this.next = next;
-  }
+interface ICircularLinkedList<T> {
+  empty(): boolean;
+  pushFront(value: T): void;
+  pushBack(value: T): void;
+  popFront(): NodeType<T>;
+  popBack(): NodeType<T>;
+  front(): NodeType<T>;
+  back(): NodeType<T>;
 }
 
-export class CircularList<T> {
-  last: ListNode<T>;
+export class CircularLinkedList<T> implements ICircularLinkedList<T> {
+  last: NodeType<T>;
 
   constructor() {
     this.last = null;
   }
 
-  /**
-   * @returns boolean
-   */
   empty(): boolean {
     return null === this.last;
   }
 
-  /**
-   * @param value - T
-   * @returns void
-   */
   pushFront(value: T): void {
-    let newNode = new CircularListNode<T>(value);
+    let newNode = new Node<T>(value);
 
     if (null === this.last) {
       this.last = newNode;
@@ -44,24 +33,17 @@ export class CircularList<T> {
     }
   }
 
-  /**
-   * @param value - T
-   * @returns void
-   */
   pushBack(value: T): void {
     this.pushFront(value);
     this.last = this.last!.next;
   }
 
-  /**
-   * @returns ListNode<T>
-   */
-  popFront(): ListNode<T> {
+  popFront(): NodeType<T> {
     if (null === this.last) {
       console.error('List is empty.');
       return null;
     } else {
-      let delNode: ListNode<T>;
+      let delNode: NodeType<T>;
 
       if (this.last.next === this.last) {
         this.last = this.last.next = null;
@@ -74,10 +56,7 @@ export class CircularList<T> {
     }
   }
 
-  /**
-   * @returns ListNode<T>
-   */
-  popBack(): ListNode<T> {
+  popBack(): NodeType<T> {
     if (null === this.last) {
       console.error('List is empty.');
       return null;
@@ -100,17 +79,11 @@ export class CircularList<T> {
     }
   }
 
-  /**
-   * @returns ListNode<T> | undefined
-   */
-  front(): ListNode<T> | undefined {
+  front(): NodeType<T> {
     return this.last?.next;
   }
 
-  /**
-   * @returns ListNode<T>
-   */
-  back(): ListNode<T> {
+  back(): NodeType<T> {
     return this.last;
   }
 
@@ -118,7 +91,7 @@ export class CircularList<T> {
     if (this.empty()) {
       console.error('List is empty.');
     } else {
-      let curr: ListNode<T> = this.last!.next;
+      let curr: NodeType<T> = this.last!.next;
       let str: string = '';
       while (curr && curr != this.last) {
         str += `${curr.value} `;

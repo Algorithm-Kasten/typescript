@@ -161,12 +161,13 @@ export class SinglyLinkedList<T> implements ILinkedList<T> {
   /* O(n), n = number of nodes */
   traverse() {
     let curr = this.head;
+    let str = '';
 
     while (curr) {
-      process.stdout.write(`${curr.value} `);
+      str += `${curr.value} `;
       curr = curr.next;
     }
 
-    console.log(`(${this.length})`);
+    console.log(`${str} (${this.length})`);
   }
 }

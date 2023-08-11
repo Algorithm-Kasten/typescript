@@ -8,6 +8,8 @@ A data structure is an organized collection of data that is designed to be acces
 
 - Linked List
   - [Singly Linked List](./src/data-structures/linked-list/singly-linked-list/)
+  - [Doubly Linked List](./src/data-structures/linked-list/doubly-linked-list/)
+  - [Circular Linked List](./src/data-structures/linked-list/circular-linked-list/)
 - Stack
   - [Array Implementation](./src/data-structures/stack/stack-array/)
   - [Linked List Implementation](./src/data-structures/stack/stack-linked-list/)

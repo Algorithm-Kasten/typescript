@@ -2,10 +2,10 @@
 
 - Linked List
   - [Singly Linked List](./linked-list/singly-linked-list/)
-  - Doubly Linked List
-  - Circular Linked List
+  - [Doubly Linked List](./linked-list/doubly-linked-list/)
+  - [Circular Linked List](./linked-list/circular-linked-list/)
 - Stack
-  - Stack - Array
+  - [Stack - Array](./stack/stack-array/)
   - [Stack - Linked List](./stack/stack-linked-list/)
 - Queue
   - [Queue Array](./queue/queue-array/)

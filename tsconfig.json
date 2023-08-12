@@ -3,7 +3,8 @@
       "types": [
         // ... other types
         "jest"
-      ]
+      ],
+      "lib": ["ES7", "DOM"]
       // ..other settings
     },
     "include": [

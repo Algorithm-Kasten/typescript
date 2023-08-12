@@ -1,12 +1,12 @@
-import { ListNode, LinkedListNode } from '../linked-list/LinkedList';
+import { Node, NodeType } from "../../node/list-node/Node";
 
 export class CircularQueueLinkedList<T> {
-  front: ListNode<T>;
-  rear: ListNode<T>;
+  front: NodeType<T>;
+  rear: NodeType<T>;
 
   constructor(value: T | null = null) {
     if (value) {
-      this.front = new LinkedListNode(value);
+      this.front = new Node(value);
       this.front.next = this.rear;
       this.rear = this.front;
     } else {
@@ -20,7 +20,7 @@ export class CircularQueueLinkedList<T> {
   }
 
   enqueue(value: T): void {
-    let newNode = new LinkedListNode(value);
+    let newNode = new Node(value);
 
     if (null === this.front) {
       this.front = newNode;
@@ -34,7 +34,7 @@ export class CircularQueueLinkedList<T> {
     }
   }
 
-  dequeue(): ListNode<T> {
+  dequeue(): NodeType<T> {
     let frontNode = this.front;
 
     if (this.front === this.rear) {
@@ -50,22 +50,22 @@ export class CircularQueueLinkedList<T> {
     return frontNode;
   }
 
-  getFront(): ListNode<T> {
+  getFront(): NodeType<T> {
     return this.front;
   }
 
-  getRear(): ListNode<T> {
+  getRear(): NodeType<T> {
     return this.rear;
   }
 
   print(): void {
-    let curr: ListNode<T> = this.front;
+    let curr: NodeType<T> = this.front;
     if (this.front) {
       while (curr && curr !== this.rear) {
-        console.log(curr.item);
+        console.log(curr.value);
         curr = curr.next;
       }
     }
-    if (curr) console.log(curr.item);
+    if (curr) console.log(curr.value);
   }
 }

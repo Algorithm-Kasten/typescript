@@ -16,6 +16,10 @@ A data structure is an organized collection of data that is designed to be acces
 - Queue
   - [Array Implementation](./src/data-structures/queue/queue-array/)
   - [Linked List Implementation](./src/data-structures/queue/queue-linked-list/)
+  - [Deque - Double Ended Queue](./queue/double-ended-queue/)
+- Circular Queue
+  - [Array Implementation](./queue/circular-queue-array/)
+  - [Linked List Implementation](./queue/circular-queue-linked-list/)
 - Tree
   - [Simple Tree](./src/data-structures/tree/simple-tree/)
   - [Binary Search Tree](./src/data-structures/tree/binary-search-tree/)

@@ -10,9 +10,9 @@
 - Queue
   - [Queue Array](./queue/queue-array/)
   - [Queue Linked List](./queue/queue-linked-list/)
-  - Circular Queue Array
-  - Circular Queue Linked List
-  - Deque - Double Ended Queue
+  - [Circular Queue Array](./queue/circular-queue-array/)
+  - [Circular Queue Linked List](./queue/circular-queue-linked-list/)
+  - [Deque - Double Ended Queue](./queue/double-ended-queue/)
 - Tree
   - [Simple Tree](./tree/simple-tree/)
   - [Binary Search Tree](./tree/binary-search-tree/)

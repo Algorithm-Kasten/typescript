@@ -1,15 +1,12 @@
-import {
-  ListNode,
-  DoublyLinkedListNode,
-} from '../../linked-list/doubly-linked-list/DoublyLinkedList';
+import { Node, NodeType } from "../../node/list-node/Node";
 
 export class Deque<T> {
-  front: ListNode<T>;
-  rear: ListNode<T>;
+  front: NodeType<T>;
+  rear: NodeType<T>;
 
   constructor(value: T | null = null) {
     if (value) {
-      this.front = new DoublyLinkedListNode(value);
+      this.front = new Node(value);
       this.rear = this.front;
       this.front.next = this.rear;
       this.rear.prev = this.front;
@@ -24,7 +21,7 @@ export class Deque<T> {
   }
 
   addFront(value: T): void {
-    let newNode = new DoublyLinkedListNode(value);
+    let newNode = new Node(value);
 
     if (null == this.front) {
       this.front = newNode;
@@ -39,7 +36,7 @@ export class Deque<T> {
   }
 
   addRear(value: T): void {
-    let newNode = new DoublyLinkedListNode(value);
+    let newNode = new Node(value);
 
     if (null == this.rear) {
       this.front = newNode;
@@ -53,7 +50,7 @@ export class Deque<T> {
     }
   }
 
-  removeFront(): ListNode<T> {
+  removeFront(): NodeType<T> {
     let node = this.front;
 
     if (this.front) {
@@ -68,7 +65,7 @@ export class Deque<T> {
     return node;
   }
 
-  removeRear(): ListNode<T> {
+  removeRear(): NodeType<T> {
     let node = this.rear;
 
     if (this.rear) {
@@ -83,18 +80,18 @@ export class Deque<T> {
     return node;
   }
 
-  getFront(): ListNode<T> {
+  getFront(): NodeType<T> {
     return this.front;
   }
 
-  getRear(): ListNode<T> {
+  getRear(): NodeType<T> {
     return this.rear;
   }
 
   print(): void {
     let str = '';
     if (this.front) {
-      let curr: ListNode<T> = this.front;
+      let curr: NodeType<T> = this.front;
       while (curr) {
         str += `${curr.value} `;
         curr = curr.next;

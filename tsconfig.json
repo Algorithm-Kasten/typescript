@@ -4,7 +4,7 @@
         // ... other types
         "jest"
       ],
-      "lib": ["ES7", "DOM"]
+      "lib": ["ES2022", "DOM"]
       // ..other settings
     },
     "include": [

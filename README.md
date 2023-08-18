@@ -23,6 +23,9 @@ A data structure is an organized collection of data that is designed to be acces
 - Tree
   - [Simple Tree](./src/data-structures/tree/simple-tree/)
   - [Binary Search Tree](./src/data-structures/tree/binary-search-tree/)
+- Heap 
+  - [Min Heap](./src/data-structures/heap/min-heap/)
+  - [Max Heap](./src/data-structures/heap/max-heap/)
 
   <!--
 - [ ] 우선순위 큐 (Priority Queue)

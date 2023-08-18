@@ -16,6 +16,9 @@
 - Tree
   - [Simple Tree](./tree/simple-tree/)
   - [Binary Search Tree](./tree/binary-search-tree/)
+- Heap
+  - [Min Heap](./heap/min-heap/)
+  - [Max Heap](./heap/max-heap/)
 - Graph
   - Adjacency List
   - Adjacency Matrix

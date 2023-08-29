@@ -1,14 +1,11 @@
 {
-    "compilerOptions": {
-      "types": [
-        // ... other types
-        "jest"
-      ],
-      "lib": ["ES2022", "DOM"]
-      // ..other settings
-    },
-    "include": [
-        "src/**/*",
-        "**/*.test.ts"
+  "compilerOptions": {
+    "types": [
+      // ... other types
+      "jest"
     ],
-  }
+    "lib": ["es6", "DOM"]
+    // ..other settings
+  },
+  "include": ["src/**/*", "**/*.test.ts"]
+}
